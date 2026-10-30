@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://btviqfhew78a4"]
+
+[ext_resource type="Script" uid="uid://vxisag3n5o3f" path="res://scenes/vfx/explosion.gd" id="1_6d3yd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s81i"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.5019608)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+refraction_scale = 1.0
+grow_amount = 0.425
+
+[sub_resource type="SphereMesh" id="SphereMesh_5a2or"]
+material = SubResource("StandardMaterial3D_7s81i")
+radius = 0.25
+height = 0.5
+radial_segments = 16
+rings = 8
+
+[node name="Explosion" type="Node3D" unique_id=239011410]
+script = ExtResource("1_6d3yd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1635693474]
+unique_name_in_owner = true
+visible = false
+mesh = SubResource("SphereMesh_5a2or")

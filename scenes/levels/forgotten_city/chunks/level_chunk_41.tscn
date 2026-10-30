@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cld0j6pxhhs7a"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_blk50"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_cid0t"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="3_8i67f"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="4_huyq4"]
+[ext_resource type="PackedScene" uid="uid://tw3sno6cqovg" path="res://scenes/objects/forgotten_city/wing_spire.tscn" id="5_2adc0"]
+[ext_resource type="PackedScene" uid="uid://dy2da467c8wf1" path="res://scenes/objects/forgotten_city/spire.tscn" id="6_j8rco"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_cid0t")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0pex0"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[node name="LevelChunk41" unique_id=138716568 instance=ExtResource("1_blk50")]
+ground_type = 3
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_0pex0")
+
+[node name="Building1" parent="." index="1" unique_id=1845901072 instance=ExtResource("3_8i67f")]
+transform = Transform3D(-0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071068, -23, 0, 0)
+size = Vector3i(2, 4, 1)
+
+[node name="Building2" parent="." index="2" unique_id=1093391855 instance=ExtResource("4_huyq4")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -18, 0, 13)
+size = Vector3i(1, 5, 1)
+
+[node name="Building4" parent="." index="3" unique_id=34856809 instance=ExtResource("4_huyq4")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 17, 0, 14)
+size = Vector3i(2, 5, 2)
+
+[node name="Building5" parent="." index="4" unique_id=1943439745 instance=ExtResource("4_huyq4")]
+transform = Transform3D(-0.91566265, 0, -0.40194768, 0, 1, 0, 0.40194768, 0, -0.91566265, -29, 0, 14)
+size = Vector3i(2, 7, 2)
+
+[node name="Building6" parent="." index="5" unique_id=168868086 instance=ExtResource("4_huyq4")]
+transform = Transform3D(-0.96944535, 0, -0.2453073, 0, 1, 0, 0.2453073, 0, -0.96944535, 18, 0, 3)
+
+[node name="WingSpire" parent="." index="6" unique_id=668513711 instance=ExtResource("5_2adc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Spire1" parent="." index="7" unique_id=1670670870 instance=ExtResource("6_j8rco")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -6, -4)
+
+[node name="MeshCollectionBase" parent="Spire1" index="1" unique_id=1200145062]
+visible = false
+
+[node name="MeshExploderBase" parent="Spire1" index="3" unique_id=324576953]
+visible = false
+
+[node name="Spire2" parent="." index="8" unique_id=1630382049 instance=ExtResource("6_j8rco")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -6, -4)
+
+[node name="MeshCollectionBase" parent="Spire2" index="1" unique_id=1200145062]
+visible = false
+
+[node name="MeshExploderBase" parent="Spire2" index="3" unique_id=324576953]
+visible = false
+
+[editable path="Spire1"]
+[editable path="Spire2"]

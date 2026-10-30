@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://qtq244qxcs5b"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_uctya"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_6023g"]
+[ext_resource type="PackedScene" uid="uid://uuchewhml8gh" path="res://scenes/objects/forgotten_city/tunnel/tunnel.tscn" id="3_ygksu"]
+[ext_resource type="PackedScene" uid="uid://buuxoequ7nqh4" path="res://scenes/objects/forgotten_city/tunnel/tunnel_bar.tscn" id="4_tosrv"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="5_syyur"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="6_i6v2k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_6023g")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_syyur"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[node name="LevelChunk13" unique_id=138716568 instance=ExtResource("1_uctya")]
+ground_type = 1
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_syyur")
+
+[node name="Tunnel5" parent="." index="1" unique_id=171645425 instance=ExtResource("3_ygksu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 4)
+
+[node name="TunnelBar4" parent="." index="2" unique_id=130678134 instance=ExtResource("4_tosrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 14)
+start_delay = 2.0
+
+[node name="Building3" parent="." index="3" unique_id=1845901072 instance=ExtResource("5_syyur")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 13, 0, 4)
+size = Vector3i(1, 5, 2)
+
+[node name="Building4" parent="." index="4" unique_id=34280602 instance=ExtResource("6_i6v2k")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 13, 0, -15)
+size = Vector3i(2, 4, 2)
+
+[node name="Building7" parent="." index="5" unique_id=850091885 instance=ExtResource("5_syyur")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -14, 0, -14)
+size = Vector3i(2, 4, 2)
+
+[node name="Building8" parent="." index="6" unique_id=772078645 instance=ExtResource("6_i6v2k")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -14, 0, 8)
+size = Vector3i(1, 8, 1)

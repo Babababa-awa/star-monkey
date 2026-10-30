@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b1aii0fbnjv3l"]
+
+[ext_resource type="PackedScene" uid="uid://bgxlyb4k7laf1" path="res://scenes/objects/building/building_side.tscn" id="1_7o5ef"]
+[ext_resource type="PackedScene" uid="uid://byk874yy5ni05" path="res://models/objects/forgotten_city/building_2_side_horizontal.tscn" id="2_7o5ef"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_825gb"]
+size = Vector3(4, 0.2, 4)
+
+[node name="Building2SideHorizontal" unique_id=913392858 instance=ExtResource("1_7o5ef")]
+
+[node name="Building2SideHorizontal" parent="MeshCollection" parent_id_path=PackedInt32Array(1037841032) index="0" unique_id=543236490 instance=ExtResource("2_7o5ef")]
+
+[node name="CollisionShape3D" parent="DamageArea3D" parent_id_path=PackedInt32Array(1708288765) index="0" unique_id=615412858]
+shape = SubResource("BoxShape3D_825gb")

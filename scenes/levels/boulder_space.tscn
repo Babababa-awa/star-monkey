@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bfxd23yhnjs4h"]
+
+[ext_resource type="PackedScene" uid="uid://w8supmhfvady" path="res://scenes/levels/base_chunk_level.tscn" id="1_ggd8p"]
+
+[node name="BaseLevel" unique_id=477418701 instance=ExtResource("1_ggd8p")]
+chunk_type = 0
+chunk_count = 0
+chunk_size = Vector3i(32, 24, 64)
+chunk_map_size = Vector3i(1, 1, 24)
+chunk_load_radius = 3
+chunk_process_radius = 1
+max_concurrent_loads = 3

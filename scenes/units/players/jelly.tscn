@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://e25gnw3quxqc"]
+
+[ext_resource type="PackedScene" uid="uid://dvclp4qf5ls62" path="res://scenes/units/players/base_player.tscn" id="1_aywno"]
+[ext_resource type="PackedScene" uid="uid://dd4gpsxkyu8fk" path="res://models/characters/jelly_craft.tscn" id="2_camfw"]
+[ext_resource type="PackedScene" uid="uid://djkypmjlwyd1i" path="res://scenes/projectiles/monkey_ball.tscn" id="2_r5ht6"]
+[ext_resource type="PackedScene" uid="uid://syqkrgawymyw" path="res://scenes/projectiles/laser_shot.tscn" id="3_tgjyk"]
+[ext_resource type="PackedScene" uid="uid://dvbhs06xlwytf" path="res://models/weapons/laser_cannon.tscn" id="4_r5ht6"]
+[ext_resource type="AudioStream" uid="uid://mulyxtju02jg" path="res://assets/audio/sfx/jelly_die.wav" id="6_noimp"]
+[ext_resource type="PackedScene" uid="uid://bs63y2igflbx0" path="res://scenes/weapons/laser_cannon.tscn" id="7_5v6q2"]
+[ext_resource type="PackedScene" uid="uid://c82akhg7mylf2" path="res://scenes/weapons/monkey_ball.tscn" id="8_8ef5f"]
+[ext_resource type="PackedScene" uid="uid://b364pk2xltdo2" path="res://scenes/units/players/components/frame_ai.tscn" id="9_6so3h"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r5ht6"]
+points = PackedVector3Array(1.75, -0.104982376, 1.2192638, 0, 0.55, 2, 0.39981413, -0.050068498, 2, 1.75, -0.1951057, 1.2192638, 1.75, -0.104982376, 0.6805012, -1.75, -0.104982376, 1.2192638, -0.40015662, -0.050068498, 2, 0, 0.2499119, -0.19498825, -1.75, -0.104982376, 0.6805012, 0.39981413, -0.25001958, 2, 0, -0.35004896, 2, 0, -0.4500783, 1, 0, -0.55, -0.19498825, 0.49985313, -0.4500783, -0.19498825, 1.75, -0.1951057, 0.6805012, 0, -0.4500783, -2, 0, -0.2390368, -1.4561472, -1.75, -0.1951057, 1.2192638, -0.40015662, -0.25001958, 2, -1.75, -0.1951057, 0.6805012, -0.50019574, -0.4500783, -0.19498825)
+
+[node name="Jelly" unique_id=510281148 instance=ExtResource("1_aywno")]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0" unique_id=599689188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.75)
+shape = SubResource("ConvexPolygonShape3D_r5ht6")
+
+[node name="UnitMeshCollection" parent="." index="1" unique_id=1214223473]
+unique_name_in_owner = true
+
+[node name="Craft" parent="UnitMeshCollection" index="0" unique_id=721725221 instance=ExtResource("2_camfw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.75)
+
+[node name="LaserCannonRight" parent="UnitMeshCollection" index="1" unique_id=62765148 instance=ExtResource("4_r5ht6")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, -0.39, -1.7)
+
+[node name="LaserCannonLeft" parent="UnitMeshCollection" index="2" unique_id=1329636906 instance=ExtResource("4_r5ht6")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, -0.39, -1.7)
+
+[node name="LaserCannonFront" parent="UnitMeshCollection" index="3" unique_id=1364848715 instance=ExtResource("4_r5ht6")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.633, -3.01)
+
+[node name="AudioStreamPlayerDie" type="AudioStreamPlayer" parent="." index="7" unique_id=1898453269]
+unique_name_in_owner = true
+stream = ExtResource("6_noimp")
+
+[node name="Weapon" parent="." index="8" unique_id=2147346876 instance=ExtResource("7_5v6q2")]
+unique_name_in_owner = true
+projectile = ExtResource("3_tgjyk")
+
+[node name="Special" parent="." index="9" unique_id=47080644 instance=ExtResource("8_8ef5f")]
+unique_name_in_owner = true
+projectile = ExtResource("2_r5ht6")
+cooldown = 3.0
+
+[node name="FrameAI" parent="." index="10" unique_id=596706340 instance=ExtResource("9_6so3h")]
+unique_name_in_owner = true

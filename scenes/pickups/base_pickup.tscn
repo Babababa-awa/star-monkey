@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cpr41qanv8540"]
+
+[ext_resource type="Script" uid="uid://bl23slccyaf8g" path="res://scripts/base_pickup.gd" id="1_8ijon"]
+[ext_resource type="Script" uid="uid://b4bhv6x3smrl1" path="res://scripts/wireframe.gd" id="1_uog1a"]
+[ext_resource type="PackedScene" uid="uid://oxw3wlhwehf8" path="res://models/pickups/pickup_sphere.tscn" id="2_3c518"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xri2v"]
+data = PackedVector3Array(0, 0, -1.5, -0.4635, -1.5, -0.6708, 1.2135, -0.9271, -0.6708, 1.2135, -0.9271, -0.6708, 1.2135, 0.927, -0.6708, 0, 0, -1.5, 0, 0, -1.5, -1.5, 0, -0.6708, -0.4635, -1.5, -0.6708, 0, 0, -1.5, -0.4635, 1.5, -0.6708, -1.5, 0, -0.6708, 0, 0, -1.5, 1.2135, 0.927, -0.6708, -0.4635, 1.5, -0.6708, 1.2135, -0.9271, -0.6708, 1.5, 0, 0.6708, 1.2135, 0.927, -0.6708, -0.4635, -1.5, -0.6708, 0.4635, -1.5, 0.6708, 1.2135, -0.9271, -0.6708, -1.5, 0, -0.6708, -1.2135, -0.9271, 0.6708, -0.4635, -1.5, -0.6708, -0.4635, 1.5, -0.6708, -1.2135, 0.927, 0.6708, -1.5, 0, -0.6708, 1.2135, 0.927, -0.6708, 0.4635, 1.5, 0.6708, -0.4635, 1.5, -0.6708, 1.2135, -0.9271, -0.6708, 0.4635, -1.5, 0.6708, 1.5, 0, 0.6708, -0.4635, -1.5, -0.6708, -1.2135, -0.9271, 0.6708, 0.4635, -1.5, 0.6708, -1.5, 0, -0.6708, -1.2135, 0.927, 0.6708, -1.2135, -0.9271, 0.6708, -0.4635, 1.5, -0.6708, 0.4635, 1.5, 0.6708, -1.2135, 0.927, 0.6708, 1.2135, 0.927, -0.6708, 1.5, 0, 0.6708, 0.4635, 1.5, 0.6708, 0.4635, -1.5, 0.6708, 0, 0, 1.5, 1.5, 0, 0.6708, -1.2135, -0.9271, 0.6708, 0, 0, 1.5, 0.4635, -1.5, 0.6708, -1.2135, 0.927, 0.6708, 0, 0, 1.5, -1.2135, -0.9271, 0.6708, 0.4635, 1.5, 0.6708, 0, 0, 1.5, -1.2135, 0.927, 0.6708, 1.5, 0, 0.6708, 0, 0, 1.5, 0.4635, 1.5, 0.6708)
+
+[node name="BasePickup" type="Area3D" unique_id=1907200850]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_8ijon")
+metadata/_custom_type_script = "uid://bl23slccyaf8g"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1761069955]
+shape = SubResource("ConcavePolygonShape3D_xri2v")
+
+[node name="Wireframe" type="Node3D" parent="." unique_id=848779205]
+script = ExtResource("1_uog1a")
+thickness = 0.05
+hide_source_mesh = true
+metadata/_custom_type_script = "uid://b4bhv6x3smrl1"
+
+[node name="PickupSphere" parent="Wireframe" unique_id=465288923 instance=ExtResource("2_3c518")]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c7sj0crruol3p"]
+
+[ext_resource type="PackedScene" uid="uid://w8supmhfvady" path="res://scenes/levels/base_chunk_level.tscn" id="1_rciyh"]
+[ext_resource type="Environment" uid="uid://xkyscljy1ocj" path="res://resources/environments/tuberosa_city_environment.tres" id="2_mdv7c"]
+
+[node name="Tuberosa" unique_id=477418701 instance=ExtResource("1_rciyh")]
+chunk_map_size = Vector3i(1, 1, 20)
+chunk_load_radius = 5
+environment = ExtResource("2_mdv7c")

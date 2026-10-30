@@ -1,0 +1,38 @@
+[gd_scene format=4 uid="uid://csnwun5isrqql"]
+
+[ext_resource type="Material" uid="uid://bmeoaeghdfdwa" path="res://materials/object/forgotten_city/structure_2.tres" id="1_j71xu"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j71xu"]
+_surfaces = [{
+"aabb": AABB(-2.1, -3, -2.1, 4.2, 6, 4.2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Inside",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AACSJP//kiQAAJIk//9s2wAAAAAAAAAAAABs2///kiQAAP//AAD//wAAbNv//2zbAAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tpuvg"]
+resource_name = "buildings_Cube_010"
+_surfaces = [{
+"aabb": AABB(-2.1, -3, -2.1, 4.2, 6, 4.2),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("1_j71xu"),
+"name": "Inside",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//H9KSJP//kiSQ05Ik//9s21HVAAAAAAAA0dAAAAAAAAAu/Wzb//+SJBf9kiT//5Ik/Pz//wAAAABF/f//AAAAAL7WbNv//2zbSdhs2///kiQn2v//AAD//1fV//8AAP//d76SJP//bNsOwWzb//9s2yHEAAAAAP//EbwAAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v2zb//+SJP//kiT//2zb//+SJP//kiT//2zb//9s2///ldX70nbXItKl2SXRztPI0yi9qb8xv7i9nsFpu0S7dcEsLUMnais7KGApWinXLlcmM/oIBi/6rQUq+kcFN/phBgAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_j71xu")
+
+[node name="SpireBase" type="MeshInstance3D" unique_id=90677419]
+mesh = SubResource("ArrayMesh_tpuvg")

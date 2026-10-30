@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://kr6r77k5rfiq"]
+
+[ext_resource type="Shader" uid="uid://7p4y3jmenxjy" path="res://shaders/laser_shot.gdshader" id="1_v1avw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_v1avw")
+shader_parameter/core_color = Color(1, 1, 1, 1)
+shader_parameter/glow_color = Color(0.003921569, 0.22745098, 0.90588236, 1)
+shader_parameter/intensity = 0.75
+shader_parameter/core_radius = 0.2
+shader_parameter/glow_radius = 2.0

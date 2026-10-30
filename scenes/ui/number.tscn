@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://1srtohft47xe"]
+
+[ext_resource type="Script" uid="uid://bsbpxy0dfbk7y" path="res://scenes/ui/number.gd" id="1_4ec3s"]
+
+[node name="Number" type="Node3D" unique_id=1457993463]
+script = ExtResource("1_4ec3s")

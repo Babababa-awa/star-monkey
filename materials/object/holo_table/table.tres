@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bjjwsnaml75v2"]
+
+[resource]
+resource_name = "Table"
+albedo_color = Color(0, 0, 0.90588236, 1)
+metallic = 0.04

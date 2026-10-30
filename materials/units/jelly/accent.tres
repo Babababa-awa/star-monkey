@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chxjymdapnhf1"]
+
+[resource]
+resource_name = "Highlights"
+albedo_color = Color(0.90588236, 0.87058824, 0, 1)
+roughness = 0.5

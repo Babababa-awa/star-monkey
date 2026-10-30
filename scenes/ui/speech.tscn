@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://ry7oxk1g6q5k"]
+
+[ext_resource type="Script" uid="uid://u2ap34avkk1t" path="res://scenes/ui/speech.gd" id="1_iwfhn"]
+[ext_resource type="Theme" uid="uid://04m40rjti25y" path="res://resources/speech.tres" id="2_4wwcl"]
+[ext_resource type="AudioStream" uid="uid://dx5dk4f5ny1bi" path="res://assets/audio/sfx/menu_move.wav" id="3_g2qjg"]
+[ext_resource type="PackedScene" uid="uid://bw4gjcm636umg" path="res://models/speech/continue.tscn" id="4_2sobn"]
+
+[node name="Speech" type="Node3D" unique_id=732223446]
+script = ExtResource("1_iwfhn")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2138491338]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_4wwcl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1201515352]
+custom_minimum_size = Vector2(480, 0)
+custom_maximum_size = Vector2(480, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_4wwcl")
+
+[node name="LabelName" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1658072184]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_4wwcl")
+theme_override_font_sizes/font_size = 48
+
+[node name="LabelSpeech" type="Label" parent="MarginContainer/VBoxContainer" unique_id=199309892]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+theme = ExtResource("2_4wwcl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+autowrap_mode = 2
+
+[node name="AudioStreamPlayerNext" type="AudioStreamPlayer" parent="." unique_id=1769186573]
+unique_name_in_owner = true
+stream = ExtResource("3_g2qjg")
+
+[node name="Continue" parent="." unique_id=1372535410 instance=ExtResource("4_2sobn")]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.75, -1.2, 0)

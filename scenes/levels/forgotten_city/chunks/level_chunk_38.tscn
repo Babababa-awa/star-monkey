@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://qdq4omjd61ob"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_75ust"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_0c4hh"]
+[ext_resource type="Script" uid="uid://cui0v6g86g0uj" path="res://scenes/levels/forgotten_city/chunks/level_chunk_38.gd" id="2_esx6s"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="3_btpwy"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="4_esx6s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_0c4hh")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_btpwy"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_esx6s"]
+size = Vector3(32, 32, 1)
+
+[node name="LevelChunk38" unique_id=138716568 instance=ExtResource("1_75ust")]
+script = ExtResource("2_esx6s")
+ground_type = 1
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_btpwy")
+
+[node name="Building10" parent="." index="1" unique_id=1845901072 instance=ExtResource("4_esx6s")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 24, 0, 9)
+size = Vector3i(2, 6, 2)
+
+[node name="Building3" parent="." index="2" unique_id=1145131051 instance=ExtResource("3_btpwy")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -22, 0, 4)
+size = Vector3i(2, 4, 1)
+
+[node name="Building2" parent="." index="3" unique_id=722261893 instance=ExtResource("4_esx6s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -9)
+size = Vector3i(1, 6, 1)
+
+[node name="Building6" parent="." index="4" unique_id=707158427 instance=ExtResource("4_esx6s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -5)
+size = Vector3i(2, 8, 1)
+
+[node name="Building15" parent="." index="5" unique_id=290691922 instance=ExtResource("3_btpwy")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 28, 0, -7)
+size = Vector3i(3, 7, 1)
+
+[node name="Building16" parent="." index="6" unique_id=1442856640 instance=ExtResource("4_esx6s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 2)
+size = Vector3i(2, 3, 1)
+
+[node name="Building1" parent="." index="7" unique_id=1900095908 instance=ExtResource("3_btpwy")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+size = Vector3i(3, 5, 2)
+
+[node name="ExplodeArea3D" type="Area3D" parent="." index="8" unique_id=65342787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 34)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExplodeArea3D" index="0" unique_id=400996242]
+shape = SubResource("BoxShape3D_esx6s")
+
+[connection signal="body_entered" from="ExplodeArea3D" to="." method="_on_explode_area_3d_body_entered"]

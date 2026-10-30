@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://tw2t1upckw3u"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_xeysu"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_egdoy"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="2_j0jgf"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="3_egdoy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_egdoy")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sqg63"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[node name="LevelChunk4" unique_id=138716568 instance=ExtResource("1_xeysu")]
+ground_type = 1
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_sqg63")
+
+[node name="Building1" parent="." index="1" unique_id=1845901072 instance=ExtResource("2_j0jgf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 12)
+size = Vector3i(3, 5, 1)
+
+[node name="Building2" parent="." index="2" unique_id=1675615545 instance=ExtResource("3_egdoy")]
+transform = Transform3D(0.96944535, 0, 0.24530739, 0, 1, 0, -0.24530739, 0, 0.96944535, -20, 0, -8)
+size = Vector3i(1, 8, 1)
+
+[node name="Building3" parent="." index="3" unique_id=748810263 instance=ExtResource("3_egdoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 9)
+size = Vector3i(2, 9, 2)
+
+[node name="Building4" parent="." index="4" unique_id=124299544 instance=ExtResource("2_j0jgf")]
+transform = Transform3D(0.5475632, 0, 0.83676434, 0, 1, 0, -0.83676434, 0, 0.5475632, 8, 0, -5)
+size = Vector3i(1, 5, 1)

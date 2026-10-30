@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bs63y2igflbx0"]
+
+[ext_resource type="Script" uid="uid://cpqe3oe4llwdw" path="res://scenes/weapons/laser_cannon.gd" id="1_eqtkm"]
+[ext_resource type="AudioStream" uid="uid://bu00jgfasxdnd" path="res://assets/audio/sfx/laser_shot.wav" id="2_604ka"]
+[ext_resource type="PackedScene" uid="uid://syqkrgawymyw" path="res://scenes/projectiles/laser_shot.tscn" id="2_c3wcc"]
+
+[node name="LaserCannon" type="Node3D" unique_id=2147346876]
+script = ExtResource("1_eqtkm")
+projectile = ExtResource("2_c3wcc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=884525309]
+unique_name_in_owner = true
+stream = ExtResource("2_604ka")
+volume_db = -8.0

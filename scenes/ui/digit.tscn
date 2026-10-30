@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://b8ud1s0gw21tc"]
+
+[ext_resource type="Script" uid="uid://bxvxys16u8ice" path="res://scenes/ui/digit.gd" id="1_bj4w7"]
+[ext_resource type="PackedScene" uid="uid://s4vltg15de7s" path="res://models/text/numbers/0.tscn" id="2_va57j"]
+[ext_resource type="PackedScene" uid="uid://bk148iqfj2xrv" path="res://models/text/numbers/1.tscn" id="3_v87gd"]
+[ext_resource type="PackedScene" uid="uid://dshyyh3as2bow" path="res://models/text/numbers/2.tscn" id="4_h8vkr"]
+[ext_resource type="PackedScene" uid="uid://cc1nh6seqxlpc" path="res://models/text/numbers/3.tscn" id="5_0v83u"]
+[ext_resource type="PackedScene" uid="uid://bsbdv7ecsn0xb" path="res://models/text/numbers/4.tscn" id="6_hov6c"]
+[ext_resource type="PackedScene" uid="uid://c07nmww1088h2" path="res://models/text/numbers/5.tscn" id="7_63vns"]
+[ext_resource type="PackedScene" uid="uid://263748q0yemg" path="res://models/text/numbers/6.tscn" id="8_qgnfe"]
+[ext_resource type="PackedScene" uid="uid://i0rv3q0346fq" path="res://models/text/numbers/7.tscn" id="9_04qvl"]
+[ext_resource type="PackedScene" uid="uid://55eqmyx7c1o8" path="res://models/text/numbers/8.tscn" id="10_bnetw"]
+[ext_resource type="PackedScene" uid="uid://dcbg8llvjyuc4" path="res://models/text/numbers/9.tscn" id="11_wvtix"]
+
+[node name="Digit" type="Node3D" unique_id=421112824]
+script = ExtResource("1_bj4w7")
+
+[node name="digit_0" parent="." unique_id=310276014 instance=ExtResource("2_va57j")]
+unique_name_in_owner = true
+
+[node name="digit_1" parent="." unique_id=332932593 instance=ExtResource("3_v87gd")]
+unique_name_in_owner = true
+visible = false
+
+[node name="digit_2" parent="." unique_id=2056654211 instance=ExtResource("4_h8vkr")]
+unique_name_in_owner = true
+visible = false
+
+[node name="digit_3" parent="." unique_id=1048397316 instance=ExtResource("5_0v83u")]
+unique_name_in_owner = true
+visible = false
+
+[node name="digit_4" parent="." unique_id=568514936 instance=ExtResource("6_hov6c")]
+unique_name_in_owner = true
+visible = false
+
+[node name="digit_5" parent="." unique_id=1490266963 instance=ExtResource("7_63vns")]
+unique_name_in_owner = true
+visible = false
+
+[node name="digit_6" parent="." unique_id=715973817 instance=ExtResource("8_qgnfe")]
+unique_name_in_owner = true
+visible = false
+
+[node name="digit_7" parent="." unique_id=74611000 instance=ExtResource("9_04qvl")]
+unique_name_in_owner = true
+visible = false
+
+[node name="digit_8" parent="." unique_id=1297341445 instance=ExtResource("10_bnetw")]
+unique_name_in_owner = true
+visible = false
+
+[node name="digit_9" parent="." unique_id=951487879 instance=ExtResource("11_wvtix")]
+unique_name_in_owner = true
+visible = false

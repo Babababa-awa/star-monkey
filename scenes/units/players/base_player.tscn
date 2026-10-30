@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dvclp4qf5ls62"]
+
+[ext_resource type="Script" uid="uid://16cxbdyqfade" path="res://scripts/base_player.gd" id="1_g4rx2"]
+[ext_resource type="Script" uid="uid://o4d4788nxyti" path="res://scripts/unit_mesh_collection.gd" id="3_ctr50"]
+[ext_resource type="Script" uid="uid://bn3f47lhct1xe" path="res://scripts/mesh_exploder.gd" id="4_tw6ko"]
+[ext_resource type="PackedScene" uid="uid://btviqfhew78a4" path="res://scenes/vfx/explosion.tscn" id="5_7fbpy"]
+
+[node name="BasePlayer" type="CharacterBody3D" unique_id=510281148]
+script = ExtResource("1_g4rx2")
+metadata/_custom_type_script = "uid://16cxbdyqfade"
+
+[node name="UnitMeshCollection" type="Node3D" parent="." unique_id=1214223473]
+script = ExtResource("3_ctr50")
+damage_color = null
+damage_delta = null
+shield_color = null
+shield_delta = null
+metadata/_custom_type_script = "uid://o4d4788nxyti"
+
+[node name="Marker3DFront" type="Marker3D" parent="." unique_id=1494180998]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.63, -3.75)
+
+[node name="Marker3DLeft" type="Marker3D" parent="." unique_id=190709163]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, -0.39, -2.4)
+
+[node name="Marker3DRight" type="Marker3D" parent="." unique_id=665314435]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, -0.39, -2.4)
+
+[node name="MeshExploder" type="Node3D" parent="." unique_id=388136981]
+unique_name_in_owner = true
+script = ExtResource("4_tw6ko")
+metadata/_custom_type_script = "uid://bn3f47lhct1xe"
+
+[node name="Explosion" parent="." unique_id=239011410 instance=ExtResource("5_7fbpy")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)

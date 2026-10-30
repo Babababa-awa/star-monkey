@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c8602be4kkmhq"]
+
+[ext_resource type="PackedScene" uid="uid://cpr41qanv8540" path="res://scenes/pickups/base_pickup.tscn" id="1_f0a5y"]
+[ext_resource type="PackedScene" uid="uid://csdl2femtwoc5" path="res://models/pickups/weapon_upgrade_pickup.tscn" id="2_f0a5y"]
+
+[node name="WeaponUpgradePickup" unique_id=942354564 instance=ExtResource("1_f0a5y")]
+pickup = 3
+
+[node name="Wireframe" parent="." index="1" unique_id=848779205]
+unique_name_in_owner = true
+visible = true
+energy = 1.0
+
+[node name="WeaponUpgradePickup" parent="." index="2" unique_id=156621729 instance=ExtResource("2_f0a5y")]

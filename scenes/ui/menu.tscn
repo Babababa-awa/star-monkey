@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://cuj8drc0pf7ao"]
+
+[ext_resource type="PackedScene" uid="uid://pj6oyjfjf5jl" path="res://models/text/titles/star_monkey.tscn" id="1_e0arn"]
+[ext_resource type="Script" uid="uid://dw1cxlw2202us" path="res://scenes/ui/menu.gd" id="1_y1o0p"]
+[ext_resource type="PackedScene" uid="uid://dmfkyebwgbwmg" path="res://models/logos/logo.tscn" id="2_037ec"]
+[ext_resource type="PackedScene" uid="uid://xmnkr7w6vgij" path="res://models/text/titles/star_monkey_jp.tscn" id="3_y1o0p"]
+[ext_resource type="PackedScene" uid="uid://hrbkr1heujei" path="res://models/text/insert_coin.tscn" id="4_037ec"]
+[ext_resource type="PackedScene" uid="uid://reyah8dj5nps" path="res://scenes/units/characters/jelly.tscn" id="4_rcuxh"]
+[ext_resource type="PackedScene" uid="uid://1srtohft47xe" path="res://scenes/ui/number.tscn" id="4_v42es"]
+[ext_resource type="PackedScene" uid="uid://bguvffgftichk" path="res://models/text/english.tscn" id="5_k48pe"]
+[ext_resource type="PackedScene" uid="uid://hoa5fff1rw51" path="res://models/text/japanese.tscn" id="6_f2fum"]
+[ext_resource type="Script" uid="uid://b4bhv6x3smrl1" path="res://scripts/wireframe.gd" id="7_5gu2s"]
+[ext_resource type="PackedScene" uid="uid://bdm7048t2sgsq" path="res://models/text/titles/continue.tscn" id="7_kaijy"]
+[ext_resource type="PackedScene" uid="uid://bre3otkget73u" path="res://models/text/titles/continue_jp.tscn" id="8_y4i35"]
+[ext_resource type="PackedScene" uid="uid://c2vbhlegq5p6j" path="res://models/text/no.tscn" id="9_rcuxh"]
+[ext_resource type="PackedScene" uid="uid://cttx43wwyby3k" path="res://models/text/no_jp.tscn" id="10_64m6r"]
+[ext_resource type="PackedScene" uid="uid://bwo7w1qstk6u2" path="res://models/text/yes.tscn" id="12_y4i35"]
+[ext_resource type="PackedScene" uid="uid://dtklvtwb7fcmp" path="res://models/text/yes_jp.tscn" id="13_rcuxh"]
+[ext_resource type="PackedScene" uid="uid://d6mhacl2n05k" path="res://models/text/titles/skip_scene.tscn" id="13_rjaru"]
+[ext_resource type="PackedScene" uid="uid://b2f2qnrxn4des" path="res://models/text/titles/skip_scene_jp.tscn" id="14_pda4b"]
+[ext_resource type="PackedScene" uid="uid://uadalqasblm0" path="res://models/text/titles/victory.tscn" id="15_kdy02"]
+[ext_resource type="PackedScene" uid="uid://brqivmgbo4lgx" path="res://models/text/titles/loading.tscn" id="15_r4o3g"]
+[ext_resource type="PackedScene" uid="uid://dbhgcahgapqur" path="res://models/text/titles/victory_jp.tscn" id="16_35nwp"]
+[ext_resource type="AudioStream" uid="uid://dx5dk4f5ny1bi" path="res://assets/audio/sfx/menu_move.wav" id="16_55a8x"]
+[ext_resource type="PackedScene" uid="uid://de1ildnxb6me7" path="res://models/text/titles/loading_jp.tscn" id="16_iwypy"]
+[ext_resource type="PackedScene" uid="uid://kd4xrv05v3rf" path="res://models/text/titles/pause.tscn" id="17_r4o3g"]
+[ext_resource type="AudioStream" uid="uid://djfwql4ct6y50" path="res://assets/audio/sfx/menu_select.wav" id="17_rrod7"]
+[ext_resource type="AudioStream" uid="uid://1culmro3i2ig" path="res://assets/audio/sfx/coutdown.wav" id="18_47ju0"]
+[ext_resource type="PackedScene" uid="uid://bgg1uouiop1vf" path="res://models/text/titles/pause_jp.tscn" id="18_iwypy"]
+[ext_resource type="PackedScene" uid="uid://b5w7bu4rkhx14" path="res://models/text/subtitles/score.tscn" id="19_iwypy"]
+[ext_resource type="AudioStream" uid="uid://dngnhfh4y1od4" path="res://assets/audio/sfx/countdown_end.wav" id="19_l7g7x"]
+[ext_resource type="PackedScene" uid="uid://c4medv88bjaeo" path="res://models/text/subtitles/score_jp.tscn" id="20_keypi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5a2or"]
+size = Vector3(2, 0.5, 0.5)
+
+[node name="Menu" type="Node3D" unique_id=326358707]
+script = ExtResource("1_y1o0p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1513789681]
+visible = false
+mesh = SubResource("BoxMesh_5a2or")
+
+[node name="StarMonkeyText" parent="." unique_id=317056025 instance=ExtResource("1_e0arn")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+
+[node name="StarMonkeyJPText" parent="." unique_id=1700669557 instance=ExtResource("3_y1o0p")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+visible = false
+
+[node name="Logo" parent="." unique_id=359856396 instance=ExtResource("2_037ec")]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
+
+[node name="InsertCoin" type="Node3D" parent="." unique_id=1728501563]
+unique_name_in_owner = true
+visible = false
+
+[node name="Jelly" parent="InsertCoin" unique_id=505437306 instance=ExtResource("4_rcuxh")]
+unique_name_in_owner = true
+transform = Transform3D(0.61428523, 0, -0.7890841, 0, 1, 0, 0.7890841, 0, 0.61428523, -1.715302, -1.0513405, 0.10487175)
+
+[node name="InsertCoinText" parent="InsertCoin" unique_id=635361675 instance=ExtResource("4_037ec")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.20791166, -0.9781476, 0, 0.9781476, 0.20791166, 0, -2, 0)
+
+[node name="LocaleSelect" type="Node3D" parent="." unique_id=779537749]
+unique_name_in_owner = true
+visible = false
+
+[node name="EnglishText" parent="LocaleSelect" unique_id=1711320404 instance=ExtResource("5_k48pe")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.20791166, -0.9781476, 0, 0.9781476, 0.20791166, 0, 0, 0)
+
+[node name="JapaneseText" parent="LocaleSelect" unique_id=1939250059 instance=ExtResource("6_f2fum")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.20791166, -0.9781476, 0, 0.9781476, 0.20791166, 0, -1, 0)
+
+[node name="CharacterSelect" type="Node3D" parent="." unique_id=803215676]
+unique_name_in_owner = true
+visible = false
+
+[node name="Continue" type="Node3D" parent="." unique_id=1914736217]
+unique_name_in_owner = true
+visible = false
+
+[node name="ContinueText" parent="Continue" unique_id=93453215 instance=ExtResource("7_kaijy")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+
+[node name="ContinueJPText" parent="Continue" unique_id=1393780970 instance=ExtResource("8_y4i35")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+
+[node name="Countdown" parent="Continue" unique_id=1457993463 node_paths=PackedStringArray("wireframe") instance=ExtResource("4_v42es")]
+unique_name_in_owner = true
+transform = Transform3D(3, 0, 0, 0, 2.934443, 0.6237351, 0, -0.6237351, 2.934443, 0, -0.55, 0)
+digit_count = 2
+start_value = 10
+wireframe = NodePath("../ContinueWireframe")
+
+[node name="ContinueWireframe" type="Node3D" parent="Continue" unique_id=616132372]
+transform = Transform3D(3, 0, 0, 0, 2.934443, 0.6237351, 0, -0.6237351, 2.934443, 0, -0.55, 0)
+script = ExtResource("7_5gu2s")
+wireframe_color = Color(0, 0, 0.90588236, 0.5019608)
+energy = 3.0
+metadata/_custom_type_script = "uid://b4bhv6x3smrl1"
+
+[node name="SkipScene" type="Node3D" parent="." unique_id=1198747821]
+unique_name_in_owner = true
+visible = false
+
+[node name="SkipSceneText" parent="SkipScene" unique_id=943768742 instance=ExtResource("13_rjaru")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+
+[node name="SkipSceneJPText" parent="SkipScene" unique_id=544071345 instance=ExtResource("14_pda4b")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+
+[node name="Loading" type="Node3D" parent="." unique_id=1461840841]
+unique_name_in_owner = true
+visible = false
+
+[node name="LoadingText" parent="Loading" unique_id=1390071947 instance=ExtResource("15_r4o3g")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+
+[node name="LoadingJPText" parent="Loading" unique_id=1397272812 instance=ExtResource("16_iwypy")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+
+[node name="Victory" type="Node3D" parent="." unique_id=1825327027]
+unique_name_in_owner = true
+visible = false
+
+[node name="VictoryText" parent="Victory" unique_id=2127993083 instance=ExtResource("15_kdy02")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+
+[node name="VictoryJPText" parent="Victory" unique_id=1607795078 instance=ExtResource("16_35nwp")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+
+[node name="ScoreText" parent="Victory" unique_id=1166484931 instance=ExtResource("19_iwypy")]
+unique_name_in_owner = true
+transform = Transform3D(0.75, 0, 0, 0, 0.37499997, -0.6495191, 0, 0.6495191, 0.37499997, 0, 0, 0)
+
+[node name="ScoreJPText" parent="Victory" unique_id=1006943168 instance=ExtResource("20_keypi")]
+unique_name_in_owner = true
+transform = Transform3D(0.75, 0, 0, 0, 0.37499997, -0.6495191, 0, 0.6495191, 0.37499997, 0, 0, 0)
+
+[node name="Score" parent="Victory" unique_id=1358173101 node_paths=PackedStringArray("wireframe") instance=ExtResource("4_v42es")]
+unique_name_in_owner = true
+transform = Transform3D(3, 0, 0, 0, 2.934443, 0.6237351, 0, -0.6237351, 2.934443, 0, -1.5, 0)
+digit_count = 6
+wireframe = NodePath("../ScoreWireframe")
+
+[node name="ScoreWireframe" type="Node3D" parent="Victory" unique_id=1767411887]
+transform = Transform3D(3, 0, 0, 0, 2.934443, 0.6237351, 0, -0.6237351, 2.934443, 0, -0.55, 0)
+script = ExtResource("7_5gu2s")
+wireframe_color = Color(0, 0, 0.90588236, 0.5019608)
+energy = 3.0
+metadata/_custom_type_script = "uid://b4bhv6x3smrl1"
+
+[node name="Pause" type="Node3D" parent="." unique_id=675708916]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseText" parent="Pause" unique_id=1532883439 instance=ExtResource("17_r4o3g")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+
+[node name="PauseJPText" parent="Pause" unique_id=2116988985 instance=ExtResource("18_iwypy")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 1.5, 0)
+
+[node name="NoText" parent="." unique_id=1608068565 instance=ExtResource("9_rcuxh")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.20791166, -0.9781476, 0, 0.9781476, 0.20791166, 1, -2, 0)
+visible = false
+
+[node name="NoJPText" parent="." unique_id=1429970739 instance=ExtResource("10_64m6r")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.20791166, -0.9781476, 0, 0.9781476, 0.20791166, 1, -2, 0)
+visible = false
+
+[node name="YesText" parent="." unique_id=1840433610 instance=ExtResource("12_y4i35")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.20791166, -0.9781476, 0, 0.9781476, 0.20791166, -1, -2, 0)
+visible = false
+
+[node name="YesJPText" parent="." unique_id=376649505 instance=ExtResource("13_rcuxh")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.20791166, -0.9781476, 0, 0.9781476, 0.20791166, -1, -2, 0)
+visible = false
+
+[node name="AudioStreamPlayerMove" type="AudioStreamPlayer" parent="." unique_id=1292394554]
+unique_name_in_owner = true
+stream = ExtResource("16_55a8x")
+max_polyphony = 3
+
+[node name="AudioStreamPlayerSelect" type="AudioStreamPlayer" parent="." unique_id=943970643]
+unique_name_in_owner = true
+stream = ExtResource("17_rrod7")
+max_polyphony = 3
+
+[node name="AudioStreamPlayerCountdown" type="AudioStreamPlayer" parent="." unique_id=1863279400]
+unique_name_in_owner = true
+stream = ExtResource("18_47ju0")
+
+[node name="AudioStreamPlayerCountdownEnd" type="AudioStreamPlayer" parent="." unique_id=1080591806]
+unique_name_in_owner = true
+stream = ExtResource("19_l7g7x")
+
+[connection signal="pose_completed" from="InsertCoin/Jelly" to="." method="_on_jelly_pose_completed"]

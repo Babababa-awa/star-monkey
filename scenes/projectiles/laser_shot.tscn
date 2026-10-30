@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://syqkrgawymyw"]
+
+[ext_resource type="Script" uid="uid://dsp7se6hugmq5" path="res://scripts/base_projectile.gd" id="1_5rgv6"]
+[ext_resource type="PackedScene" uid="uid://cvut00lugvcsi" path="res://models/projectiles/laser_shot.tscn" id="2_44clk"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5rgv6"]
+points = PackedVector3Array(0.16, -1.7620623e-05, -0.25009787, -3.1337142e-05, -1.7620623e-05, 0.5, -3.1337142e-05, -0.09, -0.25009787, -3.1337142e-05, -1.7620623e-05, -0.5, -3.1337142e-05, 0.09, -0.25009787, -0.16, -1.7620623e-05, -0.25009787)
+
+[node name="LaserShot" type="Area3D" unique_id=1548328450]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_5rgv6")
+
+[node name="LaserShot" parent="." unique_id=1777250774 instance=ExtResource("2_44clk")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=120715622]
+shape = SubResource("ConvexPolygonShape3D_5rgv6")

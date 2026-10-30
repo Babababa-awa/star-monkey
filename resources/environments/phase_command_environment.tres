@@ -1,0 +1,18 @@
+[gd_resource type="Environment" format=3 uid="uid://batngwp014bop"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u5sy4"]
+sky_top_color = Color(0.7984093, 0.07972651, 0.43747762, 1)
+sky_horizon_color = Color(0.45299423, 0.6970054, 0.7775546, 1)
+ground_bottom_color = Color(0.0526053, 0.6044847, 0, 1)
+ground_horizon_color = Color(0.45299423, 0.6970054, 0.7775546, 1)
+sun_angle_max = 73.33
+
+[sub_resource type="Sky" id="Sky_7s81i"]
+sky_material = SubResource("ProceduralSkyMaterial_u5sy4")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_7s81i")
+glow_enabled = true
+glow_intensity = 1.5
+glow_bloom = 0.8

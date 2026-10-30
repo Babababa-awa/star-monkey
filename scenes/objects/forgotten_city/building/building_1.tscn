@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://il4aje735obb"]
+
+[ext_resource type="PackedScene" uid="uid://dma5tkawjcs11" path="res://scenes/objects/building/building.tscn" id="1_k64vb"]
+[ext_resource type="PackedScene" uid="uid://bgq57k42xs5lo" path="res://scenes/objects/forgotten_city/building/building_1_side_vertical.tscn" id="2_65q1r"]
+[ext_resource type="PackedScene" uid="uid://2itkh6qva0uu" path="res://scenes/objects/forgotten_city/building/building_1_side_horizontal.tscn" id="3_c8goh"]
+
+[node name="Building1" unique_id=1845901072 instance=ExtResource("1_k64vb")]
+vertical_side = ExtResource("2_65q1r")
+horizontal_side = ExtResource("3_c8goh")

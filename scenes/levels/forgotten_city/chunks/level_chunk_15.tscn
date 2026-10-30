@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bt3okwyn6m0ms"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_dl4ep"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_671qf"]
+[ext_resource type="Script" uid="uid://cvdwwjqwme6kr" path="res://scripts/resources/enemy_spawn.gd" id="2_eir3i"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="3_2uc4m"]
+[ext_resource type="Script" uid="uid://b4brrppbemty2" path="res://scripts/resources/enemy_spawner.gd" id="3_t7g86"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="4_sywcc"]
+[ext_resource type="PackedScene" uid="uid://dbyd52chkddu3" path="res://scenes/objects/forgotten_city/ring.tscn" id="5_sywcc"]
+[ext_resource type="PackedScene" uid="uid://7kflmdyt22am" path="res://scenes/chunks/paths/line_path_3d.tscn" id="6_vdo13"]
+
+[sub_resource type="Resource" id="Resource_035sn"]
+script = ExtResource("2_eir3i")
+enemy = 1
+weapon = 4
+path_follow = NodePath("LinePath3D/PathFollow3D")
+path_progress_ratio = 1.0
+path_follow_reverse_loop = true
+metadata/_custom_type_script = "uid://cvdwwjqwme6kr"
+
+[sub_resource type="Resource" id="Resource_vdo13"]
+script = ExtResource("3_t7g86")
+enemies = Array[ExtResource("2_eir3i")]([SubResource("Resource_035sn")])
+metadata/_custom_type_script = "uid://b4brrppbemty2"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_671qf")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_035sn"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[node name="LevelChunk15" unique_id=138716568 instance=ExtResource("1_dl4ep")]
+ground_type = 1
+enemy_spawner = SubResource("Resource_vdo13")
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_035sn")
+
+[node name="Building1" parent="." index="1" unique_id=1845901072 instance=ExtResource("3_2uc4m")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 21, 0, 0)
+size = Vector3i(2, 9, 2)
+
+[node name="Building2" parent="." index="2" unique_id=854974738 instance=ExtResource("4_sywcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 14)
+size = Vector3i(2, 4, 2)
+
+[node name="Building5" parent="." index="3" unique_id=523646527 instance=ExtResource("3_2uc4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -2)
+size = Vector3i(2, 5, 2)
+
+[node name="Building6" parent="." index="4" unique_id=699867766 instance=ExtResource("4_sywcc")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -22, 0, 12)
+size = Vector3i(2, 4, 3)
+
+[node name="Building8" parent="." index="5" unique_id=828059074 instance=ExtResource("3_2uc4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 15)
+size = Vector3i(2, 7, 3)
+
+[node name="Building9" parent="." index="6" unique_id=1508097705 instance=ExtResource("4_sywcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -1)
+size = Vector3i(2, 7, 4)
+
+[node name="Building10" parent="." index="7" unique_id=1669950048 instance=ExtResource("4_sywcc")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 38, 0, -9)
+size = Vector3i(1, 10, 1)
+
+[node name="Ring" parent="." index="8" unique_id=565344709 instance=ExtResource("5_sywcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+alias = &"ring_1"
+group_alias = &"first"
+
+[node name="LinePath3D" parent="." index="9" unique_id=1917216743 instance=ExtResource("6_vdo13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 12, -9)
+distance = 24.0
+
+[node name="PathFollow3D" parent="LinePath3D" index="0" unique_id=852697521]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[editable path="LinePath3D"]

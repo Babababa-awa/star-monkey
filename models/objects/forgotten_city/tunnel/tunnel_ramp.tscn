@@ -1,0 +1,38 @@
+[gd_scene format=4 uid="uid://cxiwk6b887k11"]
+
+[ext_resource type="Material" uid="uid://dxchv12k7jptj" path="res://materials/object/forgotten_city/structure_1.tres" id="1_173u2"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4b7id"]
+_surfaces = [{
+"aabb": AABB(-5, -0.02009201, -10, 10, 10.020092, 20),
+"format": 34896613377,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAQAEAAIAAwACAAQAAAADAAUABAAFAAMABQAGAAAAAAAGAAEABAAHAAUABgAFAAgACAAFAAcABgAJAAEABgAIAAkAAQAJAAQABwAJAAgABwAEAAkA"),
+"name": "Outside",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("AADmzAAAAAD/////AAAAAAAA//8AAAAAAAAAAP//AAAAAIMA//8AAAAAAABPzQAA///mzAAAAAD//wAAT80AAP//gwDMzAAA//+DAP//AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_suwqu"]
+resource_name = "buildings_Cube_013"
+_surfaces = [{
+"aabb": AABB(-5, -0.02009201, -10, 10, 10.020092, 20),
+"attribute_data": PackedByteArray("/1//v/+f/3//n/+//1//f/9f/3//n/8//5//f/9fzEz/H6tM/1//f/8f/3//X8xM/1+rTP+f/3//3/8//9//f/+f/z//3/8//19T81qf////X6tM/5//P/9fzEz/X/+/Wp////9fU/P/n/+//5///w=="),
+"format": 34896613399,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACQAIAAsACwAIAAwADQAOAA8ADQAQAA4AEQASABMAEQAUABIAFAARABUAFAAVABYAFwAYABkAGAAXABoAGAAaABsA"),
+"material": ExtResource("1_173u2"),
+"name": "Outside",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("AADmzAAA////////AAD//wAA//8AAP/////mzAAA/////+bMAABU1f//gwD//1TV/////wAAVNX//4MAzMxU1QAAAABPzePS///mzAAA49IAAObMAADj0v//gwDMzOPS//8AAE/N49L/////AAD//wAAgwD/////AAD//wAA/////4MA/////wAAgwD//9YNAAAAAE/NGwoAAAAA//+9Kv//AABPzV0C//+DAP//DgD//4MAzMz9zAAA5swAAFTVAAAAAP//VNUAAAAAT81U1QAA//8AAFTVAACDAP//VNX/v/+//7//v/+//7//v/+/qiqqKqoqqiqqKqoqqiqqKgAA/38AAP9/AAD/fwAA/38AAP9//3/jsP9/47D/f+Ow/3/jsM447vGWOn31iSpf1X4+T/0QgDFAwSTOyVTVVNVU1VTVVNVU1VTVVNVU1VTV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4b7id")
+
+[node name="TunnelRamp" type="MeshInstance3D" unique_id=1995459011]
+mesh = SubResource("ArrayMesh_suwqu")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c3l5fx5wf31kt"]
+
+[ext_resource type="PackedScene" uid="uid://cpr41qanv8540" path="res://scenes/pickups/base_pickup.tscn" id="1_ahrae"]
+[ext_resource type="PackedScene" uid="uid://d05qml732iom6" path="res://models/pickups/special_pickup.tscn" id="2_31bxb"]
+
+[node name="SpecialPickup" unique_id=942354564 instance=ExtResource("1_ahrae")]
+pickup = 2
+
+[node name="Wireframe" parent="." index="1" unique_id=848779205]
+unique_name_in_owner = true
+visible = true
+energy = 1.0
+
+[node name="SpecialPickup" parent="." index="2" unique_id=1822575271 instance=ExtResource("2_31bxb")]

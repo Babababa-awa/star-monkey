@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bub4pu58bl411"]
+
+[ext_resource type="Script" uid="uid://bc605wkf1ar4f" path="res://scenes/weapons/pulse_cannon.gd" id="1_o0u5d"]
+[ext_resource type="AudioStream" uid="uid://civpghxybnjlm" path="res://assets/audio/sfx/pulse_shot.wav" id="2_bcpxq"]
+[ext_resource type="PackedScene" uid="uid://db8t4uspo3k6o" path="res://scenes/projectiles/pulse_shot.tscn" id="2_s2of8"]
+
+[node name="PulseCannon" type="Node3D" unique_id=1362268630]
+script = ExtResource("1_o0u5d")
+projectile = ExtResource("2_s2of8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=911579814]
+unique_name_in_owner = true
+stream = ExtResource("2_bcpxq")
+volume_db = -5.0
+max_polyphony = 3

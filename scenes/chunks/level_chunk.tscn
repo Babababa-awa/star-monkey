@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://oft22c341jsl"]
+
+[ext_resource type="Script" uid="uid://b3vlmqjkw0wrd" path="res://scenes/chunks/level_chunk.gd" id="1_qqt5y"]
+
+[node name="LevelChunk" type="Node3D" unique_id=138716568]
+script = ExtResource("1_qqt5y")

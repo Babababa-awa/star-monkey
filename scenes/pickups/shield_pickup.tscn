@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cdixxtpici0gw"]
+
+[ext_resource type="PackedScene" uid="uid://cpr41qanv8540" path="res://scenes/pickups/base_pickup.tscn" id="1_qvdsm"]
+[ext_resource type="PackedScene" uid="uid://bmq4byqu4784l" path="res://models/pickups/shield_pickup.tscn" id="2_c3a74"]
+
+[node name="ShieldPickup" unique_id=942354564 instance=ExtResource("1_qvdsm")]
+pickup = 1
+
+[node name="Wireframe" parent="." index="1" unique_id=848779205]
+unique_name_in_owner = true
+energy = 1.0
+
+[node name="ShieldPickup" parent="." index="2" unique_id=461128462 instance=ExtResource("2_c3a74")]

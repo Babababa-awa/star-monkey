@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c0mm5m1aj7rfe"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_bv8fp"]
+[ext_resource type="PackedScene" uid="uid://tw3sno6cqovg" path="res://scenes/objects/forgotten_city/wing_spire.tscn" id="2_vi7wd"]
+[ext_resource type="PackedScene" uid="uid://dy2da467c8wf1" path="res://scenes/objects/forgotten_city/spire.tscn" id="3_3glgk"]
+
+[node name="LevelChunk2" unique_id=138716568 instance=ExtResource("1_bv8fp")]
+ground_type = 2
+
+[node name="WingSpire" parent="." index="1" unique_id=668513711 instance=ExtResource("2_vi7wd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Spire1" parent="." index="2" unique_id=357742801 instance=ExtResource("3_3glgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -6, 4)
+
+[node name="MeshCollectionBase" parent="Spire1" index="1" unique_id=1200145062]
+visible = false
+
+[node name="MeshExploderBase" parent="Spire1" index="3" unique_id=324576953]
+visible = false
+
+[node name="Spire2" parent="." index="3" unique_id=1335514434 instance=ExtResource("3_3glgk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -6, 4)
+
+[node name="MeshCollectionBase" parent="Spire2" index="1" unique_id=1200145062]
+visible = false
+
+[node name="MeshExploderBase" parent="Spire2" index="3" unique_id=324576953]
+visible = false
+
+[editable path="Spire1"]
+[editable path="Spire2"]

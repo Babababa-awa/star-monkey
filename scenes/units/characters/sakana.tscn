@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://x0mbrumdrjq3"]
+
+[ext_resource type="Script" uid="uid://cxp5ijiqe7331" path="res://scenes/units/characters/sakana.gd" id="1_1a05h"]
+[ext_resource type="PackedScene" uid="uid://nxamu3snvsqe" path="res://models/characters/sakana/body.tscn" id="1_2dk8c"]
+[ext_resource type="PackedScene" uid="uid://c51abcogjof1i" path="res://models/characters/sakana/legs.tscn" id="2_ncg4u"]
+[ext_resource type="PackedScene" uid="uid://bsthk71qs8kyd" path="res://models/characters/sakana/right_arm.tscn" id="3_1a05h"]
+[ext_resource type="PackedScene" uid="uid://rqf06ss5t8c2" path="res://models/characters/sakana/left_arm.tscn" id="4_xygy0"]
+
+[node name="Sakana" type="Node3D" unique_id=491333711]
+script = ExtResource("1_1a05h")
+
+[node name="Body" parent="." unique_id=1429518509 instance=ExtResource("1_2dk8c")]
+unique_name_in_owner = true
+
+[node name="Legs" parent="." unique_id=501375554 instance=ExtResource("2_ncg4u")]
+unique_name_in_owner = true
+
+[node name="LeftArm" type="Node3D" parent="." unique_id=1055397988]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43831936, 1.178592, -0.2548746)
+
+[node name="LeftArm" parent="LeftArm" unique_id=422777873 instance=ExtResource("4_xygy0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.438, -1.179, 0.255)
+
+[node name="RightArm" type="Node3D" parent="." unique_id=283814283]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.438, 1.179, -0.255)
+
+[node name="RightArm" parent="RightArm" unique_id=371978743 instance=ExtResource("3_1a05h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.438, -1.179, 0.255)

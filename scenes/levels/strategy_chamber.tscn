@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cv68rosfhxqyf"]
+
+[ext_resource type="PackedScene" uid="uid://di6xqsrrkoklm" path="res://scenes/levels/base_level.tscn" id="1_ytipx"]
+[ext_resource type="Script" uid="uid://k0bo16jjsqg" path="res://scenes/levels/strategy_chamber.gd" id="2_664tu"]
+[ext_resource type="Environment" uid="uid://b520ml0h63ufr" path="res://resources/environments/strategy_chamber.tres" id="3_2rlbm"]
+[ext_resource type="AudioStream" uid="uid://8oevwat032gq" path="res://assets/audio/muisc/strategy_chamber.mp3" id="3_ywqs7"]
+[ext_resource type="PackedScene" uid="uid://reyah8dj5nps" path="res://scenes/units/characters/jelly.tscn" id="5_2rlbm"]
+[ext_resource type="PackedScene" uid="uid://c7ybpolq8y8yq" path="res://models/objects/holo_table.tscn" id="5_4nwxd"]
+[ext_resource type="PackedScene" uid="uid://x0mbrumdrjq3" path="res://scenes/units/characters/sakana.tscn" id="6_ekenq"]
+[ext_resource type="Script" uid="uid://b4bhv6x3smrl1" path="res://scripts/wireframe.gd" id="7_nx3p2"]
+[ext_resource type="PackedScene" uid="uid://dg7wngvv3ewnl" path="res://models/units/enemies/glass_dome.tscn" id="9_mmr77"]
+[ext_resource type="PackedScene" uid="uid://wuu75s814w6v" path="res://models/units/enemies/sweet_potato.tscn" id="10_x10aq"]
+[ext_resource type="PackedScene" uid="uid://d2cjsiytt6dvn" path="res://models/units/enemies/base.tscn" id="11_pqxix"]
+[ext_resource type="AudioStream" uid="uid://dibfjg0552pbd" path="res://assets/audio/sfx/turn_on.wav" id="12_kvjmt"]
+[ext_resource type="PackedScene" uid="uid://cdrlbsl81nq5s" path="res://models/units/enemies/bottom_dome.tscn" id="12_mmr77"]
+[ext_resource type="AudioStream" uid="uid://dke33tqu1gdp3" path="res://assets/audio/sfx/hum.wav" id="13_mmr77"]
+[ext_resource type="PackedScene" uid="uid://guifjppw8hgy" path="res://models/weapons/pulse_cannon_no_barrel.tscn" id="13_x10aq"]
+[ext_resource type="AudioStream" uid="uid://b28lq58pgiawh" path="res://assets/audio/dialogue/jelly_talk_1.wav" id="16_vfk34"]
+[ext_resource type="AudioStream" uid="uid://bqgl3g5d2oevw" path="res://assets/audio/dialogue/jelly_talk_2.wav" id="17_xocfi"]
+[ext_resource type="AudioStream" uid="uid://dabhgesb0g57w" path="res://assets/audio/dialogue/jelly_talk_3.wav" id="18_3ri1f"]
+[ext_resource type="AudioStream" uid="uid://musbw4v6emq8" path="res://assets/audio/dialogue/jelly_confirm.wav" id="19_od80l"]
+
+[node name="StrategyChamber" unique_id=477418701 instance=ExtResource("1_ytipx")]
+script = ExtResource("2_664tu")
+environment = ExtResource("3_2rlbm")
+
+[node name="AudioStreamPlayerMusic" parent="." index="0" unique_id=2045508872]
+stream = ExtResource("3_ywqs7")
+
+[node name="HoloTable" parent="." index="1" unique_id=1847584626 instance=ExtResource("5_4nwxd")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+
+[node name="Jelly" parent="." index="2" unique_id=505437306 instance=ExtResource("5_2rlbm")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="Sakana" parent="." index="3" unique_id=491333711 instance=ExtResource("6_ekenq")]
+unique_name_in_owner = true
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 7, 0, 0)
+
+[node name="Wireframe" type="Node3D" parent="." index="4" unique_id=775076831]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 3.25, 0)
+visible = false
+script = ExtResource("7_nx3p2")
+energy = 0.5
+hide_source_mesh = true
+metadata/_custom_type_script = "uid://b4bhv6x3smrl1"
+
+[node name="GlassDome" parent="Wireframe" index="0" unique_id=1771669880 instance=ExtResource("9_mmr77")]
+
+[node name="SweetPotato" parent="Wireframe" index="1" unique_id=439998871 instance=ExtResource("10_x10aq")]
+
+[node name="Base" parent="Wireframe" index="2" unique_id=1602620654 instance=ExtResource("11_pqxix")]
+
+[node name="BottomDome" parent="Wireframe" index="3" unique_id=1398235347 instance=ExtResource("12_mmr77")]
+
+[node name="PulseCannonNoBarrelRight" parent="Wireframe" index="4" unique_id=763820990 instance=ExtResource("13_x10aq")]
+transform = Transform3D(-8.742278e-08, -2, 0, 2, -8.742278e-08, 0, 0, 0, 2, 2, 0, 0)
+
+[node name="PulseCannonNoBarrelLeft" parent="Wireframe" index="5" unique_id=1350526232 instance=ExtResource("13_x10aq")]
+transform = Transform3D(-8.742278e-08, 2, 0, -2, -8.742278e-08, 0, 0, 0, 2, -2, 0, 0)
+
+[node name="AudioStreamPlayerTurnOn" type="AudioStreamPlayer" parent="." index="5" unique_id=405340895]
+unique_name_in_owner = true
+stream = ExtResource("12_kvjmt")
+volume_db = -8.0
+pitch_scale = 0.9
+
+[node name="AudioStreamPlayerHum" type="AudioStreamPlayer" parent="." index="6" unique_id=2009634221]
+unique_name_in_owner = true
+stream = ExtResource("13_mmr77")
+volume_db = -2.0
+
+[node name="AudioStreamPlayerJelly1" type="AudioStreamPlayer" parent="." index="7" unique_id=1805176776]
+unique_name_in_owner = true
+stream = ExtResource("16_vfk34")
+volume_db = 4.0
+
+[node name="AudioStreamPlayerJelly2" type="AudioStreamPlayer" parent="." index="8" unique_id=985176271]
+unique_name_in_owner = true
+stream = ExtResource("17_xocfi")
+volume_db = 4.0
+
+[node name="AudioStreamPlayerJelly3" type="AudioStreamPlayer" parent="." index="9" unique_id=1875600923]
+unique_name_in_owner = true
+stream = ExtResource("18_3ri1f")
+volume_db = 4.0
+
+[node name="AudioStreamPlayerJelly4" type="AudioStreamPlayer" parent="." index="10" unique_id=1657748987]
+unique_name_in_owner = true
+stream = ExtResource("19_od80l")
+volume_db = 4.0

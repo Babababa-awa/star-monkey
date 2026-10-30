@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://bwlomxl47le2e"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_e4r38"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_82cmn"]
+[ext_resource type="Script" uid="uid://cvdwwjqwme6kr" path="res://scripts/resources/enemy_spawn.gd" id="2_jdq0k"]
+[ext_resource type="PackedScene" uid="uid://dy2da467c8wf1" path="res://scenes/objects/forgotten_city/spire.tscn" id="3_77fcq"]
+[ext_resource type="Script" uid="uid://b4brrppbemty2" path="res://scripts/resources/enemy_spawner.gd" id="3_bf6jm"]
+[ext_resource type="PackedScene" uid="uid://vclsneatsu0k" path="res://scenes/objects/forgotten_city/girder_4.tscn" id="4_3riet"]
+[ext_resource type="PackedScene" uid="uid://c4y2g4maqx7et" path="res://scenes/objects/forgotten_city/girder_1.tscn" id="5_uebc8"]
+[ext_resource type="PackedScene" uid="uid://pyt71att78ha" path="res://scenes/objects/forgotten_city/girder_2.tscn" id="6_jdq0k"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="7_bf6jm"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="8_cpp8n"]
+[ext_resource type="PackedScene" uid="uid://52owy7u28mdd" path="res://scenes/chunks/paths/circle_path_3d.tscn" id="9_3riet"]
+
+[sub_resource type="Resource" id="Resource_uebc8"]
+script = ExtResource("2_jdq0k")
+enemy = 1
+weapon = 4
+weapon_cooldown = 1.0
+weapon_shot_follow_speed = 10.0
+path_follow = NodePath("CirclePath3D/PathFollow3D")
+metadata/_custom_type_script = "uid://cvdwwjqwme6kr"
+
+[sub_resource type="Resource" id="Resource_jdq0k"]
+script = ExtResource("2_jdq0k")
+enemy = 1
+weapon = 4
+weapon_cooldown = 1.0
+weapon_shot_follow_speed = 10.0
+path_follow = NodePath("CirclePath3D2/PathFollow3D")
+path_progress_ratio = 0.75
+metadata/_custom_type_script = "uid://cvdwwjqwme6kr"
+
+[sub_resource type="Resource" id="Resource_3riet"]
+script = ExtResource("3_bf6jm")
+enemies = Array[ExtResource("2_jdq0k")]([SubResource("Resource_uebc8"), SubResource("Resource_jdq0k")])
+metadata/_custom_type_script = "uid://b4brrppbemty2"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_82cmn")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jdq0k"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[sub_resource type="Curve3D" id="Curve3D_bf6jm"]
+resource_local_to_scene = true
+closed = true
+_data = {
+"points": PackedVector3Array(-3, 0, 0, 3, 0, 0, 0, 6, 0, 0, 3, 0, 0, -3, 0, 6, 0, 0, 3, 0, 0, -3, 0, 0, 0, -6, 0, 0, -3, 0, 0, 3, 0, -6, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_cpp8n"]
+resource_local_to_scene = true
+closed = true
+_data = {
+"points": PackedVector3Array(-3, 0, 0, 3, 0, 0, 0, 6, 0, 0, 3, 0, 0, -3, 0, 6, 0, 0, 3, 0, 0, -3, 0, 0, 0, -6, 0, 0, -3, 0, 0, 3, 0, -6, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="LevelChunk9" unique_id=138716568 instance=ExtResource("1_e4r38")]
+ground_type = 1
+enemy_spawner = SubResource("Resource_3riet")
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_jdq0k")
+
+[node name="Spire6" parent="." index="1" unique_id=668513711 instance=ExtResource("3_77fcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="Spire3" parent="." index="2" unique_id=1295184174 instance=ExtResource("3_77fcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Spire4" parent="." index="3" unique_id=1138981164 instance=ExtResource("3_77fcq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Girder8" parent="." index="4" unique_id=1010649780 instance=ExtResource("4_3riet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 16)
+
+[node name="Girder1" parent="." index="5" unique_id=718616799 instance=ExtResource("5_uebc8")]
+transform = Transform3D(0.70710665, 0, 0.7071069, 0, 1, 0, -0.7071069, 0, 0.70710665, -13, 0, 0)
+
+[node name="Girder2" parent="." index="6" unique_id=812056862 instance=ExtResource("6_jdq0k")]
+transform = Transform3D(-0.49999994, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.49999994, 14, 0, 1)
+
+[node name="Building6" parent="." index="7" unique_id=1845901072 instance=ExtResource("7_bf6jm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -6)
+size = Vector3i(3, 9, 3)
+
+[node name="Building5" parent="." index="8" unique_id=875521178 instance=ExtResource("8_cpp8n")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -22, 0, -6)
+size = Vector3i(2, 8, 1)
+
+[node name="CirclePath3D" parent="." index="9" unique_id=1917216743 instance=ExtResource("9_3riet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 8)
+curve = SubResource("Curve3D_bf6jm")
+
+[node name="CirclePath3D2" parent="." index="10" unique_id=1054208554 instance=ExtResource("9_3riet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, -12)
+curve = SubResource("Curve3D_cpp8n")
+counter_clockwise = true
+
+[editable path="CirclePath3D"]
+[editable path="CirclePath3D2"]

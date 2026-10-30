@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://t8yewkaalg5d"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_jxod6"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_s4b4n"]
+[ext_resource type="PackedScene" uid="uid://dy2da467c8wf1" path="res://scenes/objects/forgotten_city/spire.tscn" id="3_ljrlt"]
+[ext_resource type="PackedScene" uid="uid://2d7n6vmhq6hp" path="res://scenes/objects/forgotten_city/girder_3.tscn" id="4_awvfd"]
+[ext_resource type="PackedScene" uid="uid://vclsneatsu0k" path="res://scenes/objects/forgotten_city/girder_4.tscn" id="5_p5aj3"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="6_m5cvu"]
+[ext_resource type="PackedScene" uid="uid://cdixxtpici0gw" path="res://scenes/pickups/shield_pickup.tscn" id="7_ntlyn"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="8_1ldil"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_s4b4n")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ljrlt"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[node name="LevelChunk8" unique_id=138716568 instance=ExtResource("1_jxod6")]
+ground_type = 1
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_ljrlt")
+
+[node name="Spire8" parent="." index="1" unique_id=668513711 instance=ExtResource("3_ljrlt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="Spire" parent="." index="2" unique_id=1417729997 instance=ExtResource("3_ljrlt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+
+[node name="Spire2" parent="." index="3" unique_id=2101470767 instance=ExtResource("3_ljrlt")]
+
+[node name="Spire5" parent="." index="4" unique_id=87206234 instance=ExtResource("3_ljrlt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -8)
+
+[node name="Spire7" parent="." index="5" unique_id=68695899 instance=ExtResource("3_ljrlt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)
+
+[node name="Girder3" parent="." index="6" unique_id=1010649780 instance=ExtResource("4_awvfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 8)
+
+[node name="Girder4" parent="." index="7" unique_id=2092136301 instance=ExtResource("5_p5aj3")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 14, 0, -1)
+
+[node name="Girder5" parent="." index="8" unique_id=796717602 instance=ExtResource("4_awvfd")]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 13, 0, -13)
+
+[node name="Girder6" parent="." index="9" unique_id=2117637175 instance=ExtResource("5_p5aj3")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, -14, 0, 7)
+
+[node name="Girder7" parent="." index="10" unique_id=2092056249 instance=ExtResource("4_awvfd")]
+transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, -14, 0, -1)
+
+[node name="Building4" parent="." index="11" unique_id=1845901072 instance=ExtResource("6_m5cvu")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -25, 0, 8)
+size = Vector3i(2, 6, 2)
+
+[node name="Building1" parent="." index="12" unique_id=1892320353 instance=ExtResource("6_m5cvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -10)
+size = Vector3i(1, 5, 6)
+
+[node name="ShieldPickup" parent="." index="13" unique_id=942354564 instance=ExtResource("7_ntlyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -8)
+
+[node name="Building2" parent="." index="14" unique_id=1674385878 instance=ExtResource("8_1ldil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -11)
+size = Vector3i(1, 5, 6)
+
+[node name="Building3" parent="." index="15" unique_id=1214768964 instance=ExtResource("8_1ldil")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 23, 0, 8)
+size = Vector3i(2, 7, 2)

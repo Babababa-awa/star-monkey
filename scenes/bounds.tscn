@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://ccr3oxvr56b7g"]
+
+[ext_resource type="Script" uid="uid://b3cmvqmq171th" path="res://scenes/bounds.gd" id="1_iveam"]
+[ext_resource type="Shader" uid="uid://b65o8vwhdgn54" path="res://shaders/collision_box.gdshader" id="2_iveam"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7s81i"]
+size = Vector3(1, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmyop"]
+size = Vector3(1, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oifvq"]
+size = Vector3(4, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqq38"]
+size = Vector3(4, 1, 4)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xam4e"]
+size = Vector2(2, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qibe"]
+render_priority = 0
+shader = ExtResource("2_iveam")
+shader_parameter/shield_active = 0.0
+shader_parameter/shield_color = Color(0, 0, 0.90588236, 1)
+shader_parameter/fresnel_power = 2.5
+shader_parameter/idle_strength = 0.12
+shader_parameter/active_strength = 1.4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jdi3q"]
+size = Vector2(2, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iveam"]
+render_priority = 0
+shader = ExtResource("2_iveam")
+shader_parameter/shield_active = 0.0
+shader_parameter/shield_color = Color(0, 0, 0.90588236, 1)
+shader_parameter/fresnel_power = 2.5
+shader_parameter/idle_strength = 0.12
+shader_parameter/active_strength = 1.4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sffty"]
+size = Vector2(2, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q3qen"]
+render_priority = 0
+shader = ExtResource("2_iveam")
+shader_parameter/shield_active = 0.0
+shader_parameter/shield_color = Color(0, 0, 0.90588236, 1)
+shader_parameter/fresnel_power = 2.5
+shader_parameter/idle_strength = 0.12
+shader_parameter/active_strength = 1.4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5a2or"]
+size = Vector2(2, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_orywa"]
+render_priority = 0
+shader = ExtResource("2_iveam")
+shader_parameter/shield_active = 0.0
+shader_parameter/shield_color = Color(0, 0, 0.90588236, 1)
+shader_parameter/fresnel_power = 2.5
+shader_parameter/idle_strength = 0.12
+shader_parameter/active_strength = 1.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iveam"]
+size = Vector3(0.2, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q3qen"]
+size = Vector3(0.2, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_orywa"]
+size = Vector3(4, 0.2, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5a2or"]
+size = Vector3(4, 0.2, 4)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1612928514]
+script = ExtResource("1_iveam")
+
+[node name="CollisionShape3DLeft" type="CollisionShape3D" parent="." unique_id=1910067763]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+shape = SubResource("BoxShape3D_7s81i")
+
+[node name="CollisionShape3DRight" type="CollisionShape3D" parent="." unique_id=1438766044]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+shape = SubResource("BoxShape3D_dmyop")
+
+[node name="CollisionShape3DTop" type="CollisionShape3D" parent="." unique_id=46406196]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_oifvq")
+
+[node name="CollisionShape3DBottom" type="CollisionShape3D" parent="." unique_id=232807839]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+shape = SubResource("BoxShape3D_iqq38")
+
+[node name="Left" type="MeshInstance3D" parent="." unique_id=291021344]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -2, 0, 0)
+mesh = SubResource("PlaneMesh_xam4e")
+surface_material_override/0 = SubResource("ShaderMaterial_5qibe")
+
+[node name="Right" type="MeshInstance3D" parent="." unique_id=1789416434]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("PlaneMesh_jdi3q")
+surface_material_override/0 = SubResource("ShaderMaterial_iveam")
+
+[node name="Top" type="MeshInstance3D" parent="." unique_id=1895016659]
+unique_name_in_owner = true
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 2, 0)
+mesh = SubResource("PlaneMesh_sffty")
+surface_material_override/0 = SubResource("ShaderMaterial_q3qen")
+
+[node name="Bottom" type="MeshInstance3D" parent="." unique_id=1444706665]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("PlaneMesh_5a2or")
+surface_material_override/0 = SubResource("ShaderMaterial_orywa")
+
+[node name="Area3DLeft" type="Area3D" parent="." unique_id=1983981880]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3DLeftArea" type="CollisionShape3D" parent="Area3DLeft" unique_id=1813860530]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_iveam")
+
+[node name="Area3DRight" type="Area3D" parent="." unique_id=1912295182]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3DRightArea" type="CollisionShape3D" parent="Area3DRight" unique_id=1873515756]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_q3qen")
+
+[node name="Area3DTop" type="Area3D" parent="." unique_id=465726169]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3DTopArea" type="CollisionShape3D" parent="Area3DTop" unique_id=1884824557]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_orywa")
+
+[node name="Area3DBottom" type="Area3D" parent="." unique_id=1950585271]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3DBottomArea" type="CollisionShape3D" parent="Area3DBottom" unique_id=1955897045]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_5a2or")
+
+[connection signal="body_entered" from="Area3DLeft" to="." method="_on_area_3d_left_body_entered"]
+[connection signal="body_exited" from="Area3DLeft" to="." method="_on_area_3d_left_body_exited"]
+[connection signal="body_entered" from="Area3DRight" to="." method="_on_area_3d_right_body_entered"]
+[connection signal="body_exited" from="Area3DRight" to="." method="_on_area_3d_right_body_exited"]
+[connection signal="body_entered" from="Area3DTop" to="." method="_on_area_3d_top_body_entered"]
+[connection signal="body_exited" from="Area3DTop" to="." method="_on_area_3d_top_body_exited"]
+[connection signal="body_entered" from="Area3DBottom" to="." method="_on_area_3d_bottom_body_entered"]
+[connection signal="body_exited" from="Area3DBottom" to="." method="_on_area_3d_bottom_body_exited"]

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dojby5sob6543"]
+
+[ext_resource type="Script" uid="uid://cfj3orm0phe2i" path="res://scenes/game.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cuj8drc0pf7ao" path="res://scenes/ui/menu.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://ccr3oxvr56b7g" path="res://scenes/bounds.tscn" id="3_iywne"]
+[ext_resource type="Script" uid="uid://bkhqpbde2pdag" path="res://scripts/follow_camera_3d.gd" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://fggukiibwq2r" path="res://scenes/sfx/game_sfx.tscn" id="5_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://bwg8xuyxokt2i" path="res://scenes/ui/hud.tscn" id="6_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://ry7oxk1g6q5k" path="res://scenes/ui/speech.tscn" id="7_gee14"]
+[ext_resource type="Environment" uid="uid://dcddfbktm7rwc" path="res://resources/environments/forgotten_city_environment.tres" id="8_gee14"]
+[ext_resource type="Environment" uid="uid://b6otjg50rkscd" path="res://resources/environments/menu_environment.tres" id="9_0tnpc"]
+
+[node name="Game" type="Node" unique_id=1596595474]
+process_mode = 3
+script = ExtResource("1_yqjtg")
+
+[node name="World" type="Node3D" parent="." unique_id=528812673]
+process_mode = 1
+
+[node name="Level" type="Node3D" parent="World" unique_id=236515170]
+unique_name_in_owner = true
+
+[node name="Player" type="Node3D" parent="World" unique_id=452307610]
+unique_name_in_owner = true
+
+[node name="Bounds" parent="World" unique_id=1178300814 instance=ExtResource("3_iywne")]
+unique_name_in_owner = true
+bounds = Vector3(16, 12, 32)
+
+[node name="Camera3D" type="Camera3D" parent="World" unique_id=1419635388]
+unique_name_in_owner = true
+far = 256.0
+script = ExtResource("3_lbhrr")
+follow_offset = Vector3(0, 3, 7)
+follow_bounds = Vector2(14, 10)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=347090731]
+unique_name_in_owner = true
+environment = ExtResource("8_gee14")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=119171728]
+
+[node name="GameSFX" parent="World" unique_id=397227088 instance=ExtResource("5_0tnpc")]
+unique_name_in_owner = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2001456608]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI" unique_id=2017811825]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="UI/SubViewportContainer" unique_id=194914794]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 480)
+render_target_update_mode = 4
+
+[node name="Overlay" type="Node3D" parent="UI/SubViewportContainer/SubViewport" unique_id=371708971]
+unique_name_in_owner = true
+
+[node name="Speech" parent="UI/SubViewportContainer/SubViewport/Overlay" unique_id=732223446 instance=ExtResource("7_gee14")]
+unique_name_in_owner = true
+process_mode = 1
+visible = false
+
+[node name="Hud" parent="UI/SubViewportContainer/SubViewport/Overlay" unique_id=1466805292 instance=ExtResource("6_u5sy4")]
+unique_name_in_owner = true
+process_mode = 1
+
+[node name="Menu" parent="UI/SubViewportContainer/SubViewport" unique_id=326358707 instance=ExtResource("2_lnu2h")]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="UI/SubViewportContainer/SubViewport" unique_id=1430235594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+projection = 1
+size = 5.0
+far = 20.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="UI/SubViewportContainer/SubViewport" unique_id=926026434]
+environment = ExtResource("9_0tnpc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="UI/SubViewportContainer/SubViewport" unique_id=402434545]

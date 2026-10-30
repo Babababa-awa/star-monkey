@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://bwg8xuyxokt2i"]
+
+[ext_resource type="Script" uid="uid://cuq1hyrdvh8dd" path="res://scenes/ui/hud.gd" id="1_0mwgc"]
+[ext_resource type="PackedScene" uid="uid://cl3gjf1bg2da0" path="res://models/hud/player_box.tscn" id="2_bo48s"]
+[ext_resource type="PackedScene" uid="uid://bfo5mq2egiryj" path="res://models/hud/special.tscn" id="3_8qguk"]
+[ext_resource type="Material" uid="uid://byt576uh83gtm" path="res://materials/hud/hud1.tres" id="4_8qguk"]
+[ext_resource type="Material" uid="uid://bme2f5h4a8pdo" path="res://materials/hud/hud3.tres" id="4_136eg"]
+[ext_resource type="PackedScene" uid="uid://chqm21d4o38vl" path="res://models/text/labels/boss.tscn" id="6_gonto"]
+[ext_resource type="PackedScene" uid="uid://ecndx0g6sjvb" path="res://models/text/labels/boss_jp.tscn" id="7_cwdlq"]
+[ext_resource type="PackedScene" uid="uid://rdxn77174lt1" path="res://models/text/labels/frame_integrity.tscn" id="8_o6xly"]
+[ext_resource type="PackedScene" uid="uid://cmi12w22qtin" path="res://models/text/labels/frame_integrity_jp.tscn" id="9_we3sy"]
+[ext_resource type="PackedScene" uid="uid://n2rjkdk7ikig" path="res://models/text/labels/monkey_balls.tscn" id="10_65nxt"]
+[ext_resource type="PackedScene" uid="uid://ddttu06wj2ko" path="res://models/text/labels/monkey_balls_jp.tscn" id="11_el1dq"]
+[ext_resource type="PackedScene" uid="uid://jk4vo03xj6u3" path="res://models/text/labels/shield.tscn" id="12_gmc6u"]
+[ext_resource type="PackedScene" uid="uid://m12qblmopab6" path="res://models/text/labels/shield_jp.tscn" id="13_1e6lo"]
+[ext_resource type="PackedScene" uid="uid://btegnhjwaqjk7" path="res://models/text/labels/warning.tscn" id="14_4mi7y"]
+[ext_resource type="PackedScene" uid="uid://xhvha4n1ge03" path="res://models/text/labels/warning_jp.tscn" id="15_pkwgd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oj5la"]
+material = ExtResource("4_8qguk")
+size = Vector2(1.31, 0.11)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5a2or"]
+material = ExtResource("4_136eg")
+size = Vector2(1.31, 0.11)
+
+[node name="Hud" type="Node3D" unique_id=1466805292]
+script = ExtResource("1_0mwgc")
+
+[node name="PlayerBox" parent="." unique_id=1761576465 instance=ExtResource("2_bo48s")]
+transform = Transform3D(-0.103955895, -0.010926205, -0.9945219, -0.104528464, 0.9945219, 0, 0.9890738, 0.10395585, -0.10452851, -2.475, -2.25, 0)
+
+[node name="PlayerHealth" type="MeshInstance3D" parent="." unique_id=1144664188]
+unique_name_in_owner = true
+transform = Transform3D(0.9945219, -0.10395585, 0.010926205, 0, -0.10452851, -0.9945219, 0.104528464, 0.9890738, -0.103955895, -2.475, -2.25, 0)
+mesh = SubResource("PlaneMesh_oj5la")
+
+[node name="PlayerShield" type="MeshInstance3D" parent="." unique_id=653190450]
+unique_name_in_owner = true
+transform = Transform3D(0.9945219, -0.10395585, 0.010926205, 0, -0.10452851, -0.9945219, 0.104528464, 0.9890738, -0.103955895, -2.475, -2.25, 0.05)
+mesh = SubResource("PlaneMesh_5a2or")
+
+[node name="PlayerSpecial1" parent="." unique_id=493623086 instance=ExtResource("3_8qguk")]
+unique_name_in_owner = true
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 3.1, -2.27, 0)
+
+[node name="PlayerSpecial2" parent="." unique_id=1510103933 instance=ExtResource("3_8qguk")]
+unique_name_in_owner = true
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 2.85, -2.27, 0)
+
+[node name="PlayerSpecial3" parent="." unique_id=1416937099 instance=ExtResource("3_8qguk")]
+unique_name_in_owner = true
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 2.6, -2.27, 0)
+
+[node name="PlayerSpecial4" parent="." unique_id=773028429 instance=ExtResource("3_8qguk")]
+unique_name_in_owner = true
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 2.35, -2.27, 0)
+
+[node name="PlayerSpecial5" parent="." unique_id=1170563022 instance=ExtResource("3_8qguk")]
+unique_name_in_owner = true
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 2.1, -2.27, 0)
+
+[node name="BossText" parent="." unique_id=880573122 instance=ExtResource("6_gonto")]
+unique_name_in_owner = true
+transform = Transform3D(0.2819078, 0.09641814, 0.035093334, 0, 0.10260605, -0.2819078, -0.10260604, 0.26490667, 0.09641815, 0, 2.075, 0)
+visible = false
+
+[node name="BossJPText" parent="." unique_id=1449531990 instance=ExtResource("7_cwdlq")]
+unique_name_in_owner = true
+transform = Transform3D(0.2819078, 0.09641814, 0.035093334, 0, 0.10260605, -0.2819078, -0.10260604, 0.26490667, 0.09641815, 0, 2.075, 0)
+visible = false
+
+[node name="FrameIntegrityText" parent="." unique_id=1525184799 instance=ExtResource("8_o6xly")]
+unique_name_in_owner = true
+transform = Transform3D(0.2819078, 0.09641814, 0.035093334, 0, 0.10260605, -0.2819078, -0.10260604, 0.26490667, 0.09641815, -3.17, -2.075, 0)
+visible = false
+
+[node name="FrameIntegrityJPText" parent="." unique_id=1041153762 instance=ExtResource("9_we3sy")]
+unique_name_in_owner = true
+transform = Transform3D(0.2819078, 0.09641814, 0.035093334, 0, 0.10260605, -0.2819078, -0.10260604, 0.26490667, 0.09641815, -3.17, -2.075, 0)
+visible = false
+
+[node name="MonkeyBallsText" parent="." unique_id=663717476 instance=ExtResource("10_65nxt")]
+unique_name_in_owner = true
+transform = Transform3D(0.2819078, -0.09641814, -0.035093334, 0, 0.10260605, -0.2819078, 0.10260604, 0.26490667, 0.09641815, 3.17, -2.075, 0)
+visible = false
+
+[node name="MonkeyBallsJPText" parent="." unique_id=1468057053 instance=ExtResource("11_el1dq")]
+unique_name_in_owner = true
+transform = Transform3D(0.2819078, -0.09641814, -0.035093334, 0, 0.10260605, -0.2819078, 0.10260604, 0.26490667, 0.09641815, 3.17, -2.075, 0)
+visible = false
+
+[node name="ShieldText" parent="." unique_id=562062535 instance=ExtResource("12_gmc6u")]
+unique_name_in_owner = true
+transform = Transform3D(0.2819078, 0.09641814, 0.035093334, 0, 0.10260605, -0.2819078, -0.10260604, 0.26490667, 0.09641815, -3.17, -2.075, 0)
+visible = false
+
+[node name="ShieldJPText" parent="." unique_id=1278998021 instance=ExtResource("13_1e6lo")]
+unique_name_in_owner = true
+transform = Transform3D(0.2819078, 0.09641814, 0.035093334, 0, 0.10260605, -0.2819078, -0.10260604, 0.26490667, 0.09641815, -3.17, -2.075, 0)
+visible = false
+
+[node name="WarningText" parent="." unique_id=1613362210 instance=ExtResource("14_4mi7y")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 0, 0)
+visible = false
+
+[node name="WarningJPText" parent="." unique_id=645522364 instance=ExtResource("15_pkwgd")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 0, 0)
+visible = false

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bu1qg86p3kdhm"]
+
+[ext_resource type="Script" uid="uid://c3764ov5kasvj" path="res://scenes/objects/tunnel/tunnel_exit.gd" id="1_w0nfn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_omhd0"]
+size = Vector3(32, 32, 1)
+
+[node name="TunnelExit" type="Area3D" unique_id=1995826609]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_w0nfn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=638420691]
+shape = SubResource("BoxShape3D_omhd0")
+debug_color = Color(1, 0.6, 0.69803923, 1)

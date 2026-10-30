@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://reyah8dj5nps"]
+
+[ext_resource type="Script" uid="uid://daahx7e76fouv" path="res://scenes/units/characters/jelly.gd" id="1_v77i7"]
+[ext_resource type="PackedScene" uid="uid://cpki465sdwkut" path="res://models/characters/jelly/head.tscn" id="1_wwt7l"]
+[ext_resource type="Texture2D" uid="uid://d1skf2tcfgu0k" path="res://assets/characters/jelly_face_left_eye.png" id="2_8nqoo"]
+[ext_resource type="PackedScene" uid="uid://bbr487ucrtswv" path="res://models/characters/jelly/body.tscn" id="2_16ycr"]
+[ext_resource type="PackedScene" uid="uid://cy0fs781bchgy" path="res://models/characters/jelly/legs.tscn" id="3_bjiwe"]
+[ext_resource type="Texture2D" uid="uid://rthr5mgehhfj" path="res://assets/characters/jelly_face_right_eye.png" id="3_v77i7"]
+[ext_resource type="Texture2D" uid="uid://drv5nkae15ty2" path="res://assets/characters/jelly_face_mouth.png" id="4_5ieut"]
+[ext_resource type="PackedScene" uid="uid://dl60mn6xg50l0" path="res://models/characters/jelly/feet.tscn" id="4_8nqoo"]
+[ext_resource type="PackedScene" uid="uid://byi3x1wkt0c6d" path="res://models/characters/jelly/left_upper_arm.tscn" id="5_v77i7"]
+[ext_resource type="PackedScene" uid="uid://cgjj4pk58p14c" path="res://models/characters/jelly/left_lower_arm.tscn" id="6_5ieut"]
+[ext_resource type="PackedScene" uid="uid://kt35flypxkfq" path="res://models/characters/jelly/right_lower_arm.tscn" id="11_5ieut"]
+[ext_resource type="PackedScene" uid="uid://c3gl2s548fxwr" path="res://models/characters/jelly/right_upper_arm.tscn" id="11_nkhk6"]
+
+[node name="Jelly" type="Node3D" unique_id=505437306]
+script = ExtResource("1_v77i7")
+
+[node name="Head" parent="." unique_id=962226278 instance=ExtResource("1_wwt7l")]
+
+[node name="Sprite3DLeftEye" type="Sprite3D" parent="Head" unique_id=1228900022]
+transform = Transform3D(-0.17918397, -0.13647625, 0.44639373, 0, 0.4781524, 0.14618585, -0.46679023, 0.05238832, -0.17135449, 0.195, 1.243, -0.01)
+double_sided = false
+texture = ExtResource("3_v77i7")
+
+[node name="Sprite3DRightEye" type="Sprite3D" parent="Head" unique_id=1964545624]
+transform = Transform3D(0.17918399, -0.13647623, 0.44639367, 0, 0.4781524, 0.14618583, -0.4667902, -0.052388325, 0.17135449, 0.19536023, 1.243, 0.01)
+double_sided = false
+texture = ExtResource("2_8nqoo")
+
+[node name="Sprite3DMouth" type="Sprite3D" parent="Head" unique_id=1900565322]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0.186, 1.243, 0)
+double_sided = false
+texture = ExtResource("4_5ieut")
+
+[node name="Body" parent="." unique_id=467967654 instance=ExtResource("2_16ycr")]
+
+[node name="Legs" parent="." unique_id=70336254 instance=ExtResource("3_bjiwe")]
+
+[node name="Feet" parent="." unique_id=1781172099 instance=ExtResource("4_8nqoo")]
+
+[node name="LeftUpperArm" type="Node3D" parent="." unique_id=1417256311]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976, -0.114870496)
+
+[node name="LeftUpperArm" parent="LeftUpperArm" unique_id=1471709656 instance=ExtResource("5_v77i7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.976, 0.115)
+
+[node name="LeftLowerArm" type="Node3D" parent="LeftUpperArm" unique_id=1853007506]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18670082, -0.066774316)
+
+[node name="LeftLowerArm" parent="LeftUpperArm/LeftLowerArm" unique_id=512650659 instance=ExtResource("6_5ieut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.789, 0.182)
+
+[node name="RightUpperArm" type="Node3D" parent="." unique_id=781505629]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976, 0.115)
+
+[node name="RightUpperArm" parent="RightUpperArm" unique_id=1680135864 instance=ExtResource("11_nkhk6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.976, -0.115)
+
+[node name="RightLowerArm" type="Node3D" parent="RightUpperArm" unique_id=450629627]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.187, 0.067)
+
+[node name="RightLowerArm" parent="RightUpperArm/RightLowerArm" unique_id=682053284 instance=ExtResource("11_5ieut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.789, -0.182)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c7c6clwimbilw"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_iu23v"]
+[ext_resource type="PackedScene" uid="uid://808jiifdlodk" path="res://models/text/titles/forgotten_city.tscn" id="2_2qul0"]
+[ext_resource type="Script" uid="uid://cv72gngip702j" path="res://scenes/levels/forgotten_city/chunks/level_chunk_1.gd" id="2_v3xiw"]
+[ext_resource type="PackedScene" uid="uid://cehwlv1ng1ivo" path="res://models/text/titles/forgotten_city_jp.tscn" id="3_v3xiw"]
+
+[node name="LevelChunk1" unique_id=138716568 instance=ExtResource("1_iu23v")]
+script = ExtResource("2_v3xiw")
+chunk_size = Vector3i(32, 32, 32)
+
+[node name="ForgottenCity" parent="." index="1" unique_id=400013620 instance=ExtResource("2_2qul0")]
+unique_name_in_owner = true
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 18, 4)
+
+[node name="ForgottenCityJP" parent="." index="2" unique_id=1922331732 instance=ExtResource("3_v3xiw")]
+unique_name_in_owner = true
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 18, 4)

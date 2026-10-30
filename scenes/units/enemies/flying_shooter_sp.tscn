@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b6cyugl80etmh"]
+
+[ext_resource type="PackedScene" uid="uid://cjx486iiyo12w" path="res://scenes/units/enemies/base_enemy.tscn" id="1_kmvjs"]
+[ext_resource type="Script" uid="uid://dc1342ufsaxh7" path="res://scenes/units/enemies/flying_shooter_sp.gd" id="2_vtmjt"]
+[ext_resource type="PackedScene" uid="uid://dg7wngvv3ewnl" path="res://models/units/enemies/glass_dome.tscn" id="4_00oea"]
+[ext_resource type="PackedScene" uid="uid://wuu75s814w6v" path="res://models/units/enemies/sweet_potato.tscn" id="4_gcmnr"]
+[ext_resource type="PackedScene" uid="uid://cdrlbsl81nq5s" path="res://models/units/enemies/bottom_dome.tscn" id="5_00oea"]
+[ext_resource type="PackedScene" uid="uid://d2cjsiytt6dvn" path="res://models/units/enemies/base.tscn" id="5_gcmnr"]
+[ext_resource type="PackedScene" uid="uid://usvgxporg5v4" path="res://models/weapons/pulse_cannon.tscn" id="8_2x2nh"]
+[ext_resource type="PackedScene" uid="uid://bub4pu58bl411" path="res://scenes/weapons/pulse_cannon.tscn" id="8_t8821"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gee14"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gcmnr"]
+radius = 2.0
+
+[node name="FlyingShooterSP" unique_id=476004655 instance=ExtResource("1_kmvjs")]
+collision_layer = 4
+script = ExtResource("2_vtmjt")
+current_weapon = 4
+kill_delay = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0" unique_id=1071544809]
+shape = SubResource("SphereShape3D_gee14")
+
+[node name="GlassDome" parent="UnitMeshCollection" parent_id_path=PackedInt32Array(319505172) index="0" unique_id=1771669880 instance=ExtResource("4_00oea")]
+
+[node name="SweetPotato" parent="UnitMeshCollection" parent_id_path=PackedInt32Array(319505172) index="1" unique_id=439998871 instance=ExtResource("4_gcmnr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0)
+
+[node name="Base" parent="UnitMeshCollection" parent_id_path=PackedInt32Array(319505172) index="2" unique_id=1602620654 instance=ExtResource("5_gcmnr")]
+
+[node name="BottomDome" parent="UnitMeshCollection" parent_id_path=PackedInt32Array(319505172) index="3" unique_id=1398235347 instance=ExtResource("5_00oea")]
+
+[node name="PulseCannonBottom" parent="UnitMeshCollection" parent_id_path=PackedInt32Array(319505172) index="4" unique_id=901621110 instance=ExtResource("8_2x2nh")]
+unique_name_in_owner = true
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -2, 0)
+
+[node name="Marker3DBottom" type="Marker3D" parent="UnitMeshCollection/PulseCannonBottom" index="0" unique_id=320434860]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.29999995, -0.715)
+
+[node name="PulseCannonRight" parent="UnitMeshCollection" parent_id_path=PackedInt32Array(319505172) index="5" unique_id=1228074941 instance=ExtResource("8_2x2nh")]
+unique_name_in_owner = true
+transform = Transform3D(-8.742278e-08, -2, 0, 2, -8.742278e-08, 0, 0, 0, 2, 2, 0, 0)
+visible = false
+
+[node name="Marker3DRight" type="Marker3D" parent="UnitMeshCollection/PulseCannonRight" index="0" unique_id=512614304]
+unique_name_in_owner = true
+transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 0.5, -1.3113414e-08, -0.29999995, -0.715)
+
+[node name="PulseCannonLeft" parent="UnitMeshCollection" parent_id_path=PackedInt32Array(319505172) index="6" unique_id=1270216860 instance=ExtResource("8_2x2nh")]
+unique_name_in_owner = true
+transform = Transform3D(2.3849761e-08, 2, 0, -2, 2.3849761e-08, 0, 0, 0, 2, -2, 0, 0)
+visible = false
+
+[node name="Marker3DLeft" type="Marker3D" parent="UnitMeshCollection/PulseCannonLeft" index="0" unique_id=2006921628]
+unique_name_in_owner = true
+transform = Transform3D(5.9624403e-09, -0.5, 0, 0.5, 5.9624403e-09, 0, 0, 0, 0.5, -3.5774637e-09, -0.29999995, -0.715)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageArea3D" parent_id_path=PackedInt32Array(2032896382) index="0" unique_id=1154936648]
+shape = SubResource("SphereShape3D_gcmnr")
+
+[node name="Weapon" parent="." index="5" unique_id=1362268630 instance=ExtResource("8_t8821")]
+unique_name_in_owner = true

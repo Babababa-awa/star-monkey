@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://chpq01r6j8wow"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_smf86"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_psfql"]
+[ext_resource type="PackedScene" uid="uid://bkd63rbj7ihqd" path="res://scenes/objects/forgotten_city/tunnel/tunnel_ramp.tscn" id="5_3aq0h"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="5_l0mdx"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="6_3aq0h"]
+[ext_resource type="PackedScene" uid="uid://uuchewhml8gh" path="res://scenes/objects/forgotten_city/tunnel/tunnel.tscn" id="6_vy0ww"]
+[ext_resource type="PackedScene" uid="uid://c4y2g4maqx7et" path="res://scenes/objects/forgotten_city/girder_1.tscn" id="7_bbgp4"]
+[ext_resource type="PackedScene" uid="uid://pyt71att78ha" path="res://scenes/objects/forgotten_city/girder_2.tscn" id="8_853ok"]
+[ext_resource type="PackedScene" uid="uid://2d7n6vmhq6hp" path="res://scenes/objects/forgotten_city/girder_3.tscn" id="9_d5e6o"]
+[ext_resource type="PackedScene" uid="uid://vclsneatsu0k" path="res://scenes/objects/forgotten_city/girder_4.tscn" id="10_tm804"]
+[ext_resource type="PackedScene" uid="uid://cx2lhd7o8kkwd" path="res://scenes/objects/tunnel/tunnel_enter.tscn" id="11_ncrt8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_psfql")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_83h7w"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[node name="LevelChunk23" unique_id=138716568 instance=ExtResource("1_smf86")]
+ground_type = 1
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_83h7w")
+
+[node name="Building7" parent="." index="1" unique_id=1845901072 instance=ExtResource("6_3aq0h")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -30, 0, 7)
+size = Vector3i(2, 5, 3)
+
+[node name="Building8" parent="." index="2" unique_id=644761331 instance=ExtResource("6_3aq0h")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 18, 0, 6)
+size = Vector3i(3, 5, 1)
+
+[node name="Building9" parent="." index="3" unique_id=132760611 instance=ExtResource("5_l0mdx")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -15, 0, 6)
+size = Vector3i(2, 4, 2)
+
+[node name="Building10" parent="." index="4" unique_id=1111522078 instance=ExtResource("6_3aq0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -15)
+size = Vector3i(4, 6, 4)
+
+[node name="Building11" parent="." index="5" unique_id=1621706247 instance=ExtResource("5_l0mdx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -12)
+size = Vector3i(3, 6, 3)
+
+[node name="TunnelRamp" parent="." index="6" unique_id=171645425 instance=ExtResource("5_3aq0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Tunnel1" parent="." index="7" unique_id=1265387167 instance=ExtResource("6_vy0ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -16)
+
+[node name="Girder1" parent="." index="8" unique_id=718616799 instance=ExtResource("7_bbgp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 17, -8)
+
+[node name="Girder2" parent="." index="9" unique_id=1010649780 instance=ExtResource("8_853ok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 17, -10)
+
+[node name="Girder3" parent="." index="10" unique_id=1000401265 instance=ExtResource("7_bbgp4")]
+transform = Transform3D(0.70710695, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.70710695, 5, 17, -8)
+
+[node name="Girder4" parent="." index="11" unique_id=1053347190 instance=ExtResource("8_853ok")]
+transform = Transform3D(-0.49999994, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.49999994, -2, 17, -8)
+
+[node name="Girder5" parent="." index="12" unique_id=1296827161 instance=ExtResource("7_bbgp4")]
+transform = Transform3D(-0.49999994, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, -0.49999994, 3, 17, -13)
+
+[node name="Girder6" parent="." index="13" unique_id=76148054 instance=ExtResource("8_853ok")]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 0, 17, -14)
+
+[node name="Girder7" parent="." index="14" unique_id=1791173074 instance=ExtResource("7_bbgp4")]
+transform = Transform3D(0.5, 0, 0.8660253, 0, 1, 0, -0.8660253, 0, 0.5, -5, 17, -12)
+
+[node name="Girder8" parent="." index="15" unique_id=86436032 instance=ExtResource("8_853ok")]
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, -3, 17, -12)
+
+[node name="Girder9" parent="." index="16" unique_id=790389892 instance=ExtResource("9_d5e6o")]
+transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 10, 0, -13)
+
+[node name="Girder10" parent="." index="17" unique_id=447092858 instance=ExtResource("10_tm804")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -9)
+
+[node name="Girder11" parent="." index="18" unique_id=259869702 instance=ExtResource("9_d5e6o")]
+transform = Transform3D(-0.25881898, 0, 0.9659259, 0, 1, 0, -0.9659259, 0, -0.25881898, 9, 0, -6)
+
+[node name="Girder12" parent="." index="19" unique_id=1750153813 instance=ExtResource("10_tm804")]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 14, 0, -9)
+
+[node name="Girder14" parent="." index="20" unique_id=1311073757 instance=ExtResource("10_tm804")]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 10, 0, -20)
+
+[node name="Girder15" parent="." index="21" unique_id=1931140661 instance=ExtResource("9_d5e6o")]
+transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, 15, 0, -4)
+
+[node name="Girder16" parent="." index="22" unique_id=558685160 instance=ExtResource("10_tm804")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 15, 0, -15)
+
+[node name="Girder13" parent="." index="23" unique_id=916883331 instance=ExtResource("9_d5e6o")]
+transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, 13, 0, -12)
+
+[node name="Girder17" parent="." index="24" unique_id=336091245 instance=ExtResource("9_d5e6o")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -8, 0, -9)
+
+[node name="Girder18" parent="." index="25" unique_id=1901180944 instance=ExtResource("10_tm804")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6, 0, -6)
+
+[node name="Girder19" parent="." index="26" unique_id=1753196250 instance=ExtResource("9_d5e6o")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -10, 0, -5)
+
+[node name="Girder20" parent="." index="27" unique_id=1986066688 instance=ExtResource("10_tm804")]
+transform = Transform3D(-0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071068, -12, 0, -11)
+
+[node name="Girder21" parent="." index="28" unique_id=1242226471 instance=ExtResource("7_bbgp4")]
+transform = Transform3D(0.9659258, 0, 0.25881898, 0, 1, 0, -0.25881898, 0, 0.9659258, -14, 0, -5)
+
+[node name="Girder22" parent="." index="29" unique_id=720339470 instance=ExtResource("9_d5e6o")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -15, 0, -13)
+
+[node name="Girder23" parent="." index="30" unique_id=249075522 instance=ExtResource("10_tm804")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -14, 0, -18)
+
+[node name="Girder24" parent="." index="31" unique_id=218195232 instance=ExtResource("9_d5e6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -18)
+
+[node name="TunnelEnter" parent="." index="32" unique_id=1995826609 instance=ExtResource("11_ncrt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, -8)

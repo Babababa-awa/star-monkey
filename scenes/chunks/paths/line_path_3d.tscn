@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://7kflmdyt22am"]
+
+[ext_resource type="Script" uid="uid://1i87he3uxl4l" path="res://scenes/chunks/paths/line_path_3d.gd" id="1_nb7ik"]
+
+[sub_resource type="Curve3D" id="Curve3D_0xuaw"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="LinePath3D" type="Path3D" unique_id=1917216743]
+curve = SubResource("Curve3D_0xuaw")
+script = ExtResource("1_nb7ik")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=852697521]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+loop = false

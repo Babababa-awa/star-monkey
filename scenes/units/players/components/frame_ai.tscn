@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://b364pk2xltdo2"]
+
+[ext_resource type="Script" uid="uid://b8ty1iysataic" path="res://scenes/units/players/components/frame_ai.gd" id="1_dntgi"]
+[ext_resource type="AudioStream" uid="uid://baiq06c8i6pw8" path="res://assets/audio/dialogue/frame_ai_monkey_ball_constructed.mp3" id="2_dh6k7"]
+[ext_resource type="AudioStream" uid="uid://y1ypgwgbj8vu" path="res://assets/audio/dialogue/frame_ai_shields_restored.mp3" id="3_b1tg4"]
+[ext_resource type="AudioStream" uid="uid://cvt6e622j5ouw" path="res://assets/audio/dialogue/frame_ai_shield_power_acquired.mp3" id="4_wcl6k"]
+[ext_resource type="AudioStream" uid="uid://cdf4r1kf7gplx" path="res://assets/audio/dialogue/frame_ai_weapons_upgraded.mp3" id="5_ln548"]
+[ext_resource type="AudioStream" uid="uid://dbrq7e0cwjw1b" path="res://assets/audio/dialogue/frame_ai_enemy_destroyed.mp3" id="6_b1tg4"]
+[ext_resource type="AudioStream" uid="uid://skvcje876cst" path="res://assets/audio/dialogue/frame_ai_enemies_destroyed.mp3" id="7_wcl6k"]
+[ext_resource type="AudioStream" uid="uid://bbb3yeqibpbh0" path="res://assets/audio/sfx/pickup.wav" id="8_wcl6k"]
+[ext_resource type="AudioStream" uid="uid://ce0d3jpfou87u" path="res://assets/audio/dialogue/frame_ai_shields_down.mp3" id="9_ln548"]
+[ext_resource type="AudioStream" uid="uid://ef3xr3wauswa" path="res://assets/audio/dialogue/frame_ai_enemies_are_leaving.mp3" id="10_qkdxq"]
+[ext_resource type="AudioStream" uid="uid://ceuxgf6y715sq" path="res://assets/audio/dialogue/frame_ai_all_enemies_destroyed.mp3" id="11_2enpf"]
+[ext_resource type="AudioStream" uid="uid://dhs1lpsewgn2" path="res://assets/audio/dialogue/frame_ai_shield_power_acquired_jp.mp3" id="12_rro4w"]
+[ext_resource type="AudioStream" uid="uid://pkbho1mkmshc" path="res://assets/audio/dialogue/frame_ai_shields_restored_jp.mp3" id="13_tt7tq"]
+[ext_resource type="AudioStream" uid="uid://v3hj2w2rjqxo" path="res://assets/audio/dialogue/frame_ai_weapons_upgraded_jp.mp3" id="14_hnaes"]
+[ext_resource type="AudioStream" uid="uid://dioabn2ddahwy" path="res://assets/audio/dialogue/frame_ai_enemy_destroyed_jp.mp3" id="15_b03my"]
+[ext_resource type="AudioStream" uid="uid://d0yn68fg42chf" path="res://assets/audio/dialogue/frame_ai_enemies_destroyed_jp.mp3" id="16_fxios"]
+[ext_resource type="AudioStream" uid="uid://cml0xh3n2ahq7" path="res://assets/audio/dialogue/frame_ai_shields_down_jp.mp3" id="17_0t8i6"]
+[ext_resource type="AudioStream" uid="uid://f31isdk23vwd" path="res://assets/audio/dialogue/frame_ai_enemies_are_leaving_jp.mp3" id="18_cbcbw"]
+[ext_resource type="AudioStream" uid="uid://hhn2p5pctoos" path="res://assets/audio/dialogue/frame_ai_all_enemies_destroyed_jp.mp3" id="19_hqw12"]
+
+[node name="FrameAi" type="Node3D" unique_id=596706340]
+script = ExtResource("1_dntgi")
+
+[node name="AudioStreamPlayerPickupSpecial" type="AudioStreamPlayer" parent="." unique_id=1992902403]
+unique_name_in_owner = true
+stream = ExtResource("2_dh6k7")
+
+[node name="AudioStreamPlayerShieldsRestored" type="AudioStreamPlayer" parent="." unique_id=545390060]
+unique_name_in_owner = true
+stream = ExtResource("3_b1tg4")
+
+[node name="AudioStreamPlayerPickupShield" type="AudioStreamPlayer" parent="." unique_id=1341266038]
+unique_name_in_owner = true
+stream = ExtResource("4_wcl6k")
+
+[node name="AudioStreamPlayerPickupWeaponUpgrade" type="AudioStreamPlayer" parent="." unique_id=447504214]
+unique_name_in_owner = true
+stream = ExtResource("5_ln548")
+
+[node name="AudioStreamPlayerEnemyKilled" type="AudioStreamPlayer" parent="." unique_id=1690160410]
+unique_name_in_owner = true
+stream = ExtResource("6_b1tg4")
+
+[node name="AudioStreamPlayerEnemiesKilled" type="AudioStreamPlayer" parent="." unique_id=663606699]
+unique_name_in_owner = true
+stream = ExtResource("7_wcl6k")
+
+[node name="AudioStreamPlayerPickup" type="AudioStreamPlayer" parent="." unique_id=628011998]
+unique_name_in_owner = true
+stream = ExtResource("8_wcl6k")
+volume_db = -5.0
+
+[node name="AudioStreamPlayerShieldsDown" type="AudioStreamPlayer" parent="." unique_id=748414875]
+unique_name_in_owner = true
+stream = ExtResource("9_ln548")
+
+[node name="AudioStreamPlayerVictory" type="AudioStreamPlayer" parent="." unique_id=1400227488]
+unique_name_in_owner = true
+stream = ExtResource("10_qkdxq")
+
+[node name="AudioStreamPlayerVictoryFull" type="AudioStreamPlayer" parent="." unique_id=1704158628]
+unique_name_in_owner = true
+stream = ExtResource("11_2enpf")
+
+[node name="AudioStreamPlayerPickupSpecialJP" type="AudioStreamPlayer" parent="." unique_id=314166569]
+unique_name_in_owner = true
+stream = ExtResource("12_rro4w")
+
+[node name="AudioStreamPlayerShieldsRestoredJP" type="AudioStreamPlayer" parent="." unique_id=193662385]
+unique_name_in_owner = true
+stream = ExtResource("13_tt7tq")
+
+[node name="AudioStreamPlayerPickupShieldJP" type="AudioStreamPlayer" parent="." unique_id=820561107]
+unique_name_in_owner = true
+stream = ExtResource("12_rro4w")
+
+[node name="AudioStreamPlayerPickupWeaponUpgradeJP" type="AudioStreamPlayer" parent="." unique_id=496868638]
+unique_name_in_owner = true
+stream = ExtResource("14_hnaes")
+
+[node name="AudioStreamPlayerEnemyKilledJP" type="AudioStreamPlayer" parent="." unique_id=1020548837]
+unique_name_in_owner = true
+stream = ExtResource("15_b03my")
+
+[node name="AudioStreamPlayerEnemiesKilledJP" type="AudioStreamPlayer" parent="." unique_id=43082530]
+unique_name_in_owner = true
+stream = ExtResource("16_fxios")
+
+[node name="AudioStreamPlayerShieldsDownJP" type="AudioStreamPlayer" parent="." unique_id=1053103084]
+unique_name_in_owner = true
+stream = ExtResource("17_0t8i6")
+
+[node name="AudioStreamPlayerVictoryJP" type="AudioStreamPlayer" parent="." unique_id=1283287171]
+unique_name_in_owner = true
+stream = ExtResource("18_cbcbw")
+
+[node name="AudioStreamPlayerVictoryFullJP" type="AudioStreamPlayer" parent="." unique_id=1262357222]
+unique_name_in_owner = true
+stream = ExtResource("19_hqw12")

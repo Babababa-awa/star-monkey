@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c82akhg7mylf2"]
+
+[ext_resource type="Script" uid="uid://cf1h8vetws4xj" path="res://scenes/weapons/monkey_ball.gd" id="1_nxyj2"]
+[ext_resource type="AudioStream" uid="uid://c3ndcs4qqsjcv" path="res://assets/audio/sfx/monkey_ball.wav" id="2_5nwnh"]
+
+[node name="MonkeyBall" type="Node3D" unique_id=47080644]
+script = ExtResource("1_nxyj2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1619670230]
+unique_name_in_owner = true
+stream = ExtResource("2_5nwnh")

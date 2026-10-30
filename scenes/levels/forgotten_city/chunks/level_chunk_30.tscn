@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://ctmt6k71u0hfd"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_1wu0r"]
+[ext_resource type="Script" uid="uid://cvdwwjqwme6kr" path="res://scripts/resources/enemy_spawn.gd" id="2_nh4oo"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_yudvc"]
+[ext_resource type="Script" uid="uid://b4brrppbemty2" path="res://scripts/resources/enemy_spawner.gd" id="3_i1y6q"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="4_t822q"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="5_e8ajc"]
+[ext_resource type="PackedScene" uid="uid://vclsneatsu0k" path="res://scenes/objects/forgotten_city/girder_4.tscn" id="6_qhgkw"]
+[ext_resource type="PackedScene" uid="uid://pyt71att78ha" path="res://scenes/objects/forgotten_city/girder_2.tscn" id="7_lhp15"]
+[ext_resource type="PackedScene" uid="uid://cdixxtpici0gw" path="res://scenes/pickups/shield_pickup.tscn" id="8_lhp15"]
+
+[sub_resource type="Resource" id="Resource_eafvh"]
+script = ExtResource("2_nh4oo")
+enemy = 1
+weapon = 6
+weapon_cooldown = 1.0
+weapon_shot_follow_speed = 15.0
+marker = NodePath("Marker3D")
+metadata/_custom_type_script = "uid://cvdwwjqwme6kr"
+
+[sub_resource type="Resource" id="Resource_c32n2"]
+script = ExtResource("3_i1y6q")
+enemies = Array[ExtResource("2_nh4oo")]([SubResource("Resource_eafvh")])
+metadata/_custom_type_script = "uid://b4brrppbemty2"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_yudvc")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0og10"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[node name="LevelChunk30" unique_id=138716568 instance=ExtResource("1_1wu0r")]
+ground_type = 1
+enemy_spawner = SubResource("Resource_c32n2")
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_0og10")
+
+[node name="Building4" parent="." index="1" unique_id=1845901072 instance=ExtResource("5_e8ajc")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 18, 0, -4)
+size = Vector3i(2, 4, 2)
+
+[node name="Building5" parent="." index="2" unique_id=660962302 instance=ExtResource("4_t822q")]
+transform = Transform3D(-0.2588191, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.2588191, 15, 0, 9)
+size = Vector3i(2, 6, 3)
+
+[node name="Building8" parent="." index="3" unique_id=293983944 instance=ExtResource("5_e8ajc")]
+transform = Transform3D(-0.86602545, 0, -0.4999999, 0, 1, 0, 0.4999999, 0, -0.86602545, 34, 0, 7)
+size = Vector3i(3, 7, 3)
+
+[node name="Building10" parent="." index="4" unique_id=960863613 instance=ExtResource("5_e8ajc")]
+transform = Transform3D(-0.96592593, 0, 0.25881916, 0, 1, 0, -0.25881916, 0, -0.96592593, -33, 0, 17)
+size = Vector3i(2, 6, 2)
+
+[node name="Building11" parent="." index="5" unique_id=1384502636 instance=ExtResource("4_t822q")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -35, 0, 4)
+size = Vector3i(3, 9, 3)
+
+[node name="Building13" parent="." index="6" unique_id=564475221 instance=ExtResource("4_t822q")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -23, 0, -8)
+size = Vector3i(2, 5, 3)
+
+[node name="Building14" parent="." index="7" unique_id=1982959874 instance=ExtResource("5_e8ajc")]
+transform = Transform3D(-0.96592593, 0, -0.25881898, 0, 1, 0, 0.25881898, 0, -0.96592593, -20, 0, 5)
+size = Vector3i(2, 4, 2)
+
+[node name="Building17" parent="." index="8" unique_id=925501366 instance=ExtResource("4_t822q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="Building19" parent="." index="9" unique_id=138258810 instance=ExtResource("5_e8ajc")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 2, 0, 15)
+size = Vector3i(1, 2, 1)
+
+[node name="Building20" parent="." index="10" unique_id=2066604286 instance=ExtResource("5_e8ajc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -4)
+size = Vector3i(1, 2, 1)
+
+[node name="Girder4" parent="." index="11" unique_id=1010649780 instance=ExtResource("6_qhgkw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 16)
+
+[node name="Girder2" parent="." index="12" unique_id=1046545736 instance=ExtResource("7_lhp15")]
+transform = Transform3D(0.25881898, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881898, 7, 0, 1)
+
+[node name="Girder6" parent="." index="13" unique_id=754617784 instance=ExtResource("6_qhgkw")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -11, 0, -18)
+
+[node name="ShieldPickup" parent="." index="14" unique_id=942354564 instance=ExtResource("8_lhp15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -10)
+
+[node name="Marker3D" type="Marker3D" parent="." index="15" unique_id=526110632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 8)

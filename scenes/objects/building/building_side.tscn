@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bgxlyb4k7laf1"]
+
+[ext_resource type="Script" uid="uid://dmrj2xdo3e8cc" path="res://scenes/objects/building/building_side.gd" id="1_bhuq7"]
+[ext_resource type="Script" uid="uid://bkobid3j8b3k7" path="res://scripts/mesh_collection.gd" id="2_mpv0e"]
+[ext_resource type="Script" uid="uid://bn3f47lhct1xe" path="res://scripts/mesh_exploder.gd" id="2_rkyqy"]
+[ext_resource type="Script" uid="uid://bl35jhm8obkxt" path="res://scripts/damage_area_3d.gd" id="3_opgsk"]
+
+[node name="BuildingSide" type="Node3D" unique_id=913392858]
+script = ExtResource("1_bhuq7")
+
+[node name="MeshCollection" type="Node3D" parent="." unique_id=1037841032]
+unique_name_in_owner = true
+script = ExtResource("2_mpv0e")
+metadata/_custom_type_script = "uid://bkobid3j8b3k7"
+
+[node name="MeshExploder" type="Node3D" parent="." unique_id=892526844]
+unique_name_in_owner = true
+script = ExtResource("2_rkyqy")
+metadata/_custom_type_script = "uid://bn3f47lhct1xe"
+
+[node name="DamageArea3D" type="Area3D" parent="." unique_id=1708288765]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("3_opgsk")
+damage = 10
+independent = true
+metadata/_custom_type_script = "uid://bl35jhm8obkxt"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageArea3D" unique_id=615412858]

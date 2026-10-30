@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bsq6wa4j3xwdf"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_hl1jn"]
+[ext_resource type="Script" uid="uid://cvdwwjqwme6kr" path="res://scripts/resources/enemy_spawn.gd" id="2_22sq8"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_dxsta"]
+[ext_resource type="PackedScene" uid="uid://dbyd52chkddu3" path="res://scenes/objects/forgotten_city/ring.tscn" id="3_gptiw"]
+[ext_resource type="Script" uid="uid://b4brrppbemty2" path="res://scripts/resources/enemy_spawner.gd" id="3_x468g"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="4_1grcy"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="5_mtwbe"]
+[ext_resource type="PackedScene" uid="uid://7kflmdyt22am" path="res://scenes/chunks/paths/line_path_3d.tscn" id="6_w4b6i"]
+
+[sub_resource type="Resource" id="Resource_x468g"]
+script = ExtResource("2_22sq8")
+enemy = 1
+weapon = 5
+weapon_cooldown = 1.0
+weapon_shot_follow_speed = 5.0
+path_follow = NodePath("LinePath3D/PathFollow3D")
+path_progress_ratio = 0.5
+path_follow_reverse_loop = true
+metadata/_custom_type_script = "uid://cvdwwjqwme6kr"
+
+[sub_resource type="Resource" id="Resource_22sq8"]
+script = ExtResource("3_x468g")
+enemies = Array[ExtResource("2_22sq8")]([SubResource("Resource_x468g")])
+metadata/_custom_type_script = "uid://b4brrppbemty2"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_dxsta")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f1sif"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[node name="LevelChunk17" unique_id=138716568 instance=ExtResource("1_hl1jn")]
+ground_type = 1
+enemy_spawner = SubResource("Resource_22sq8")
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_f1sif")
+
+[node name="Ring2" parent="." index="1" unique_id=565344709 instance=ExtResource("3_gptiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -16)
+alias = &"ring_3"
+group_alias = &"first"
+
+[node name="Building4" parent="." index="2" unique_id=1845901072 instance=ExtResource("4_1grcy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 6)
+size = Vector3i(2, 4, 2)
+
+[node name="Building5" parent="." index="3" unique_id=1896850090 instance=ExtResource("5_mtwbe")]
+transform = Transform3D(0.7071067, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071067, -18, 0, -7)
+size = Vector3i(2, 5, 3)
+
+[node name="Building8" parent="." index="4" unique_id=178957499 instance=ExtResource("4_1grcy")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -39, 0, -1)
+size = Vector3i(3, 10, 3)
+
+[node name="Building10" parent="." index="5" unique_id=1834764029 instance=ExtResource("4_1grcy")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 25, 0, -13)
+size = Vector3i(2, 6, 2)
+
+[node name="Building11" parent="." index="6" unique_id=234406549 instance=ExtResource("5_mtwbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+size = Vector3i(3, 8, 3)
+
+[node name="Building13" parent="." index="7" unique_id=2108691695 instance=ExtResource("5_mtwbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 12)
+size = Vector3i(1, 5, 2)
+
+[node name="Building14" parent="." index="8" unique_id=1043697547 instance=ExtResource("4_1grcy")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 17, 0, -2)
+
+[node name="LinePath3D" parent="." index="9" unique_id=1917216743 instance=ExtResource("6_w4b6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 12, -9)
+
+[node name="PathFollow3D" parent="LinePath3D" index="0" unique_id=852697521]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[editable path="LinePath3D"]

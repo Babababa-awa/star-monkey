@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dgg1swjrxwm8g"]
+
+[ext_resource type="Script" uid="uid://bkobid3j8b3k7" path="res://scripts/mesh_collection.gd" id="1_b1s65"]
+
+[node name="MeshCollection" type="Node3D" unique_id=896249454]
+script = ExtResource("1_b1s65")

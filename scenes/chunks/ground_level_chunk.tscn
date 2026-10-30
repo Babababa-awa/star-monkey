@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cdabn61v3kwl5"]
+
+[ext_resource type="Script" uid="uid://bjvjarxyxnhg8" path="res://scenes/chunks/ground_level_chunk.gd" id="1_0gs50"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_7x6fi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+resource_local_to_scene = true
+render_priority = -1
+shader = ExtResource("2_7x6fi")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hlmbr"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[node name="GroundLevelChunk" type="Node3D" unique_id=138716568]
+script = ExtResource("1_0gs50")
+chunk_size = Vector3i(32, 24, 32)
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=911276369]
+unique_name_in_owner = true
+mesh = SubResource("PlaneMesh_hlmbr")

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cth2ageepdopi"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_xvxms"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_o3aii"]
+[ext_resource type="PackedScene" uid="uid://2d7n6vmhq6hp" path="res://scenes/objects/forgotten_city/girder_3.tscn" id="5_innkm"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="5_nh4oo"]
+[ext_resource type="PackedScene" uid="uid://bu1qg86p3kdhm" path="res://scenes/objects/tunnel/tunnel_exit.tscn" id="6_h1kvn"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="6_i1y6q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_o3aii")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bgqgt"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[node name="LevelChunk29" unique_id=138716568 instance=ExtResource("1_xvxms")]
+ground_type = 1
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_bgqgt")
+
+[node name="Building1" parent="." index="1" unique_id=1845901072 instance=ExtResource("6_i1y6q")]
+transform = Transform3D(-0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071068, 20.125002, 0, -11)
+size = Vector3i(2, 4, 1)
+
+[node name="Building2" parent="." index="2" unique_id=1188303150 instance=ExtResource("5_nh4oo")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 17.125002, 0, 2)
+size = Vector3i(1, 6, 1)
+
+[node name="Building3" parent="." index="3" unique_id=419342287 instance=ExtResource("6_i1y6q")]
+transform = Transform3D(-0.96592593, 0, -0.25881898, 0, 1, 0, 0.25881898, 0, -0.96592593, 19.125, 0, 15)
+size = Vector3i(3, 5, 3)
+
+[node name="Building6" parent="." index="4" unique_id=2041782639 instance=ExtResource("5_nh4oo")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 29.125002, 0, -2)
+size = Vector3i(2, 7, 1)
+
+[node name="Building7" parent="." index="5" unique_id=1682365680 instance=ExtResource("6_i1y6q")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 32.125, 0, 15)
+size = Vector3i(2, 8, 2)
+
+[node name="Building9" parent="." index="6" unique_id=661694784 instance=ExtResource("6_i1y6q")]
+transform = Transform3D(-0.96592593, 0, 0.25881916, 0, 1, 0, -0.25881916, 0, -0.96592593, -17.875, 0, 8)
+size = Vector3i(2, 4, 2)
+
+[node name="Building12" parent="." index="7" unique_id=251479019 instance=ExtResource("5_nh4oo")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -31.875, 0, 16)
+size = Vector3i(2, 6, 2)
+
+[node name="Building15" parent="." index="8" unique_id=1624836234 instance=ExtResource("6_i1y6q")]
+transform = Transform3D(-0.96592593, 0, 0.25881916, 0, 1, 0, -0.25881916, 0, -0.96592593, -30.874998, 0, 0)
+size = Vector3i(3, 5, 1)
+
+[node name="Building16" parent="." index="9" unique_id=1322038031 instance=ExtResource("5_nh4oo")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -21.874998, 0, -11)
+size = Vector3i(2, 3, 1)
+
+[node name="Girder3" parent="." index="10" unique_id=1010649780 instance=ExtResource("5_innkm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -9)
+
+[node name="TunnelExit" parent="." index="11" unique_id=1995826609 instance=ExtResource("6_h1kvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, -4)

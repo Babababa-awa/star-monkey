@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cdo01bdy3c5nj"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_qdnkd"]
+[ext_resource type="Shader" uid="uid://bw5oqu1a4x6jt" path="res://shaders/ground.gdshader" id="2_g1r4f"]
+[ext_resource type="Script" uid="uid://cvdwwjqwme6kr" path="res://scripts/resources/enemy_spawn.gd" id="2_xnycy"]
+[ext_resource type="PackedScene" uid="uid://vclsneatsu0k" path="res://scenes/objects/forgotten_city/girder_4.tscn" id="3_d7one"]
+[ext_resource type="Script" uid="uid://b4brrppbemty2" path="res://scripts/resources/enemy_spawner.gd" id="3_gyfff"]
+[ext_resource type="PackedScene" uid="uid://2d7n6vmhq6hp" path="res://scenes/objects/forgotten_city/girder_3.tscn" id="4_40owg"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="5_ldlye"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="6_xnycy"]
+[ext_resource type="PackedScene" uid="uid://c4y2g4maqx7et" path="res://scenes/objects/forgotten_city/girder_1.tscn" id="7_gyfff"]
+[ext_resource type="PackedScene" uid="uid://7kflmdyt22am" path="res://scenes/chunks/paths/line_path_3d.tscn" id="8_40owg"]
+
+[sub_resource type="Resource" id="Resource_ldlye"]
+script = ExtResource("2_xnycy")
+enemy = 1
+weapon = 4
+weapon_cooldown = 1.0
+weapon_shot_follow_speed = 10.0
+path_follow = NodePath("LinePath3D/PathFollow3D")
+path_follow_reverse_loop = true
+metadata/_custom_type_script = "uid://cvdwwjqwme6kr"
+
+[sub_resource type="Resource" id="Resource_40owg"]
+script = ExtResource("3_gyfff")
+enemies = Array[ExtResource("2_xnycy")]([SubResource("Resource_ldlye")])
+metadata/_custom_type_script = "uid://b4brrppbemty2"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqt5y"]
+render_priority = -1
+shader = ExtResource("2_g1r4f")
+shader_parameter/color = Color(0.42, 0.42, 0.42, 1)
+shader_parameter/fade_left = false
+shader_parameter/fade_right = false
+shader_parameter/fade_forward = false
+shader_parameter/fade_back = false
+shader_parameter/fade_start_x = 0.3750000178125
+shader_parameter/fade_start_y = 0.3750000178125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ldlye"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_qqt5y")
+size = Vector2(32, 32)
+
+[node name="LevelChunk7" unique_id=138716568 instance=ExtResource("1_qdnkd")]
+ground_type = 1
+enemy_spawner = SubResource("Resource_40owg")
+
+[node name="Ground" parent="." index="0" unique_id=911276369]
+mesh = SubResource("PlaneMesh_ldlye")
+
+[node name="Girder9" parent="." index="1" unique_id=1010649780 instance=ExtResource("3_d7one")]
+transform = Transform3D(-0.4999999, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, -0.4999999, 0, 0, 14)
+
+[node name="Girder10" parent="." index="2" unique_id=1163203210 instance=ExtResource("4_40owg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 9)
+
+[node name="Building5" parent="." index="3" unique_id=1845901072 instance=ExtResource("5_ldlye")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 14, 0, 4)
+size = Vector3i(2, 5, 2)
+
+[node name="Building6" parent="." index="4" unique_id=1022425828 instance=ExtResource("5_ldlye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -11)
+
+[node name="Building7" parent="." index="5" unique_id=436684550 instance=ExtResource("6_xnycy")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 14, 0, -11)
+size = Vector3i(1, 6, 1)
+
+[node name="Girder11" parent="." index="6" unique_id=718616799 instance=ExtResource("7_gyfff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13)
+
+[node name="Building8" parent="." index="7" unique_id=1138487809 instance=ExtResource("6_xnycy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 5)
+size = Vector3i(4, 9, 4)
+
+[node name="LinePath3D" parent="." index="8" unique_id=1917216743 instance=ExtResource("8_40owg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 10, -2)
+distance = 24.0
+direction = 1
+
+[editable path="LinePath3D"]

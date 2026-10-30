@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://d0t6wb6qaxikt"]
+
+[ext_resource type="PackedScene" uid="uid://cdabn61v3kwl5" path="res://scenes/chunks/ground_level_chunk.tscn" id="1_w7qvn"]
+[ext_resource type="PackedScene" uid="uid://il4aje735obb" path="res://scenes/objects/forgotten_city/building/building_1.tscn" id="2_lu7co"]
+[ext_resource type="PackedScene" uid="uid://cfxxv8mhbbmr7" path="res://scenes/objects/forgotten_city/building/building_2.tscn" id="3_8mrt7"]
+[ext_resource type="PackedScene" uid="uid://c3l5fx5wf31kt" path="res://scenes/pickups/special_pickup.tscn" id="4_j18o4"]
+
+[node name="LevelChunk3" unique_id=138716568 instance=ExtResource("1_w7qvn")]
+ground_type = 1
+
+[node name="Building1" parent="." index="1" unique_id=1845901072 instance=ExtResource("2_lu7co")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 13, 0, 16)
+size = Vector3i(2, 4, 1)
+
+[node name="Building2" parent="." index="2" unique_id=427480741 instance=ExtResource("3_8mrt7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 4)
+size = Vector3i(1, 5, 1)
+
+[node name="Building3" parent="." index="3" unique_id=604359943 instance=ExtResource("2_lu7co")]
+transform = Transform3D(0.7360971, 0, 0.67687595, 0, 1, 0, -0.67687595, 0, 0.7360971, -13, 0, 15)
+size = Vector3i(1, 3, 1)
+
+[node name="Building4" parent="." index="4" unique_id=1074586051 instance=ExtResource("3_8mrt7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 2)
+size = Vector3i(2, 5, 2)
+
+[node name="Building5" parent="." index="5" unique_id=116272631 instance=ExtResource("3_8mrt7")]
+transform = Transform3D(0.9156626, 0, 0.40194777, 0, 1, 0, -0.40194777, 0, 0.9156626, -23, 0, 9)
+
+[node name="Building6" parent="." index="6" unique_id=2035694552 instance=ExtResource("3_8mrt7")]
+transform = Transform3D(0.96944535, 0, 0.24530739, 0, 1, 0, -0.24530739, 0, 0.96944535, 21, 0, 10)
+
+[node name="Building7" parent="." index="7" unique_id=1084370661 instance=ExtResource("2_lu7co")]
+transform = Transform3D(0.9156626, 0, 0.40194777, 0, 1, 0, -0.40194777, 0, 0.9156626, 14, 0, -8)
+size = Vector3i(1, 6, 2)
+
+[node name="Building8" parent="." index="8" unique_id=743543163 instance=ExtResource("2_lu7co")]
+transform = Transform3D(0.83676434, 0, 0.5475632, 0, 1, 0, -0.5475632, 0, 0.83676434, -20, 0, -9)
+size = Vector3i(2, 8, 2)
+
+[node name="SpecialPickup" parent="." index="9" unique_id=942354564 instance=ExtResource("4_j18o4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 11)

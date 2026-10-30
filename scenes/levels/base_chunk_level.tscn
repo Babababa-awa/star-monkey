@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://w8supmhfvady"]
+
+[ext_resource type="PackedScene" uid="uid://di6xqsrrkoklm" path="res://scenes/levels/base_level.tscn" id="1_vro65"]
+[ext_resource type="Script" uid="uid://b43wcsbjcfvld" path="res://scripts/levels/chunk_level.gd" id="2_5ehw6"]
+[ext_resource type="AudioStream" uid="uid://vwdv7x7cocxf" path="res://assets/audio/muisc/victory.mp3" id="3_e27jd"]
+
+[node name="BaseLevel" unique_id=477418701 instance=ExtResource("1_vro65")]
+script = ExtResource("2_5ehw6")
+chunk_type = 0
+chunk_size = Vector3i(32, 24, 32)
+chunk_map_size = Vector3i(1, 1, 48)
+chunk_load_radius = 5
+chunk_process_radius = 3
+max_concurrent_loads = 3
+total_enemy_count = -1
+has_player = true
+
+[node name="AudioStreamPlayerVictory" type="AudioStreamPlayer" parent="." index="1" unique_id=2127430293]
+unique_name_in_owner = true
+stream = ExtResource("3_e27jd")
+
+[node name="Chunks" type="Node3D" parent="." index="2" unique_id=105002029]
+unique_name_in_owner = true

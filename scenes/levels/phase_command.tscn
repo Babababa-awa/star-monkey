@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://c2x6hi58ygxh0"]
+
+[ext_resource type="PackedScene" uid="uid://di6xqsrrkoklm" path="res://scenes/levels/base_level.tscn" id="1_yv0eg"]
+[ext_resource type="Script" uid="uid://bb0rxvnfgxvnb" path="res://scenes/levels/phase_command.gd" id="2_c5krr"]
+[ext_resource type="Environment" uid="uid://batngwp014bop" path="res://resources/environments/phase_command_environment.tres" id="3_gdxt2"]
+[ext_resource type="PackedScene" uid="uid://5ckm3vtje3uh" path="res://scenes/objects/phase_command.tscn" id="4_wma2k"]
+[ext_resource type="PackedScene" uid="uid://dd4gpsxkyu8fk" path="res://models/characters/jelly_craft.tscn" id="5_sfpj1"]
+[ext_resource type="AudioStream" uid="uid://d0ntakoeyk6ho" path="res://assets/audio/muisc/menu.mp3" id="6_iiejp"]
+
+[sub_resource type="Curve3D" id="Curve3D_wma2k"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, -15, -15, 0, 15, -15, 0, 30, 15, 0, 15, -15, 0, -15, -75, 0, 30, 0, 0, 0, -0.7099457, 0, -14.672136, -90, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_sfpj1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, -0.0345459, -0.96990013, -4.7027893, 0.0345459, 0.96990013, 4.7027893, 4.196167e-05, 8.034452, 32.338055, -26.799072, -13.0056, -24.101624, 26.799072, 13.0056, 24.101624, 25.538738, 28.382511, 103.71944, 0, 0, 0, 0, 0, 0, 82.54283, 70.56413, 125.635956),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="PhaseCommand" unique_id=477418701 instance=ExtResource("1_yv0eg")]
+script = ExtResource("2_c5krr")
+follow_speed = 20.0
+environment = ExtResource("3_gdxt2")
+
+[node name="PhaseCommand" parent="." index="0" unique_id=1241935283 instance=ExtResource("4_wma2k")]
+unique_name_in_owner = true
+
+[node name="Path3DCamera" type="Path3D" parent="." index="1" unique_id=642025550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 37.9437, 38)
+curve = SubResource("Curve3D_wma2k")
+
+[node name="PathFollow3DCamera" type="PathFollow3D" parent="Path3DCamera" index="0" unique_id=603123181]
+unique_name_in_owner = true
+transform = Transform3D(-0.9924789, 0, 0.12223721, 0, 0.999967, 0, -0.12223694, 0, -0.9924811, -0.15822844, 0, 2.006187)
+progress = 2.013443
+loop = false
+
+[node name="Path3DCraft" type="Path3D" parent="." index="2" unique_id=865713247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.461262, 8.93745, -1.7194338)
+curve = SubResource("Curve3D_sfpj1")
+
+[node name="PathFollow3DCraft" type="PathFollow3D" parent="Path3DCraft" index="0" unique_id=1168828138]
+unique_name_in_owner = true
+transform = Transform3D(-0.99997705, 0.00030921667, 0.0012096019, 1.4551589e-11, 0.9688352, -0.2476687, -0.0012484826, -0.24766825, -0.96883535, 0, 0, 0)
+
+[node name="JellyCraft" parent="Path3DCraft/PathFollow3DCraft" index="0" unique_id=721725221 instance=ExtResource("5_sfpj1")]
+transform = Transform3D(1, 0, -3.637979e-12, 0, 1, 0, 3.637979e-12, 0, 1, 0, 0, 0)
+
+[node name="AudioStreamPlayerMusic" parent="." index="3" unique_id=2045508872]
+stream = ExtResource("6_iiejp")

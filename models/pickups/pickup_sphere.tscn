@@ -1,0 +1,38 @@
+[gd_scene format=4 uid="uid://oxw3wlhwehf8"]
+
+[ext_resource type="Material" uid="uid://dmp6r72pvrbam" path="res://materials/pickups/pickup_sphere.tres" id="1_anmtk"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_anmtk"]
+_surfaces = [{
+"aabb": AABB(-1.5, -1.4999999, -1.5, 3, 2.9999998, 3),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgAEAAAAAgADAAUAAgAFAAQAAwAGAAUABAAFAAcABQAGAAcAAAAEAAgABAAHAAgAAAAJAAEAAAAIAAkAAQAKAAMACgAGAAMACQAKAAEABwAGAAsACAAHAAsACwAGAAoACAALAAkACQALAAoA"),
+"name": "Pickup1.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/3//fwAAAAByWAAAwUYAAIzn5DDBRgAAjKcAAD25AACM5xrPwUYAAP///389uQAA/3//f///AACMp///PbkAAHJY///BRgAAAAD/f8FGAAByGOQwPbkAAHIYGs89uQAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rdax3"]
+resource_name = "weapons_Icosphere_001"
+_surfaces = [{
+"aabb": AABB(-1.5, -1.4999999, -1.5, 3, 2.9999998, 3),
+"attribute_data": PackedByteArray("iy7//0UXr9fRRa/X0UWv11x0r9cWXf//uej//3PRr9f//6/XLbr//+iir9dz0a/Xoov//1x0r9fooq/X0UWv1xZdYK9cdK/XRRev14suYK/RRa/Xc9Gv17noYK///6/X6KKv1y26YK9z0a/XXHSv16KLYK/ooq/X0UWv14suYK8WXWCvRRev1wAAYK+LLmCvc9Gv1y26YK+56GCv6KKv16KLYK8tumCvXHSv1xZdYK+ii2Cviy5gr9FFEYcWXWCvAABgr0UXEYeLLmCvLbpgr3PREYe56GCvootgr+iiEYctumCvFl1gr1x0EYeii2Cv"),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcAGAAZABoAGwAcAB0AHgAfACAAIQAiACMAJAAlACYAJwAoACkAKgArACwALQAuAC8AMAAxADIAMwA0ADUANgA3ADgAOQA6ADsA"),
+"material": ExtResource("1_anmtk"),
+"name": "Pickup1.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("/3//fwAAwehyWAAAwUbB6Izn5DDBRsHojOfkMMFG2+6M5xrPwUbb7v9//38AANvu/3//fwAAuOoAAP9/wUa46nJYAADBRrjq/3//fwAA7fRyWP//wUbt9AAA/3/BRu30/3//fwAAL/yM5xrPwUYv/HJY///BRi/8jOfkMMFGcNr///9/Pblw2oznGs/BRnDaclgAAMFG1MmMpwAAPbnUyYzn5DDBRtTJAAD/f8FG+c9yGOQwPbn5z3JYAADBRvnPclj//8FG4+dyGBrPPbnj5wAA/3/BRuPnjOcaz8FGofeMp///Pbmh93JY///BRqH3jOfkMMFGAsKMpwAAPbkCwv///389uQLCclgAAMFGZ7hyGOQwPblnuIynAAA9uWe4AAD/f8FGkdByGBrPPbmR0HIY5DA9uZHQclj//8FGjPWMp///PbmM9XIYGs89uYz1jOcaz8FG2OH///9/PbnY4Yyn//89udjhjKcAAD25p63/f/9///+nrf///389uaetchjkMD25Bpv/f/9///8Gm4ynAAA9uQabchgazz25jcP/f/9///+Nw3IY5DA9uY3DjKf//z25JPP/f/9///8k83IYGs89uSTz////fz25etr/f/9///962oyn//89uXrafRFMaX0RTGl9EUxpbzdvN283bzdvN283ATTbpwE026cBNNunS1v4xUtb+MVLW/jFcleGDnJXhg5yV4YOkS2RLZEtkS2RLZEtXRCFYl0QhWJdEIViRT55okU+eaJFPnmiMGPqtjBj6rYwY+q2D0HOCg9BzgoPQc4K3R7XOt0e1zrdHtc6zCJ6j8wieo/MInqPcViNp3FYjadxWI2nMHcEtTB3BLUwdwS1Si5IGEouSBhKLkgYrxRvJ68UbyevFG8nxDVVjMQ1VYzENVWMjWdxmI1ncZiNZ3GYTHtGnEx7RpxMe0acoRr4DaEa+A2hGvgN")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_anmtk")
+
+[node name="PickupSphere" type="MeshInstance3D" unique_id=1520177497]
+mesh = SubResource("ArrayMesh_rdax3")

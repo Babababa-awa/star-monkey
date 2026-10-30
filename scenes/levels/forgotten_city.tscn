@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://ot0gvgqtx46g"]
+
+[ext_resource type="PackedScene" uid="uid://w8supmhfvady" path="res://scenes/levels/base_chunk_level.tscn" id="1_cs7g7"]
+[ext_resource type="Environment" uid="uid://dcddfbktm7rwc" path="res://resources/environments/forgotten_city_environment.tres" id="2_idb7s"]
+[ext_resource type="Script" uid="uid://ddmokbpdvlgxe" path="res://scenes/levels/forgotten_city.gd" id="2_vlr12"]
+[ext_resource type="Script" uid="uid://daqn4cn36yjwt" path="res://scripts/resources/ring_group.gd" id="3_k5hi0"]
+[ext_resource type="AudioStream" uid="uid://bjnjqmp6xdefm" path="res://assets/audio/muisc/forgotten_city.mp3" id="3_vlr12"]
+
+[sub_resource type="Resource" id="Resource_gpask"]
+resource_local_to_scene = true
+script = ExtResource("3_k5hi0")
+alias = &"first"
+total_rings = 6
+metadata/_custom_type_script = "uid://daqn4cn36yjwt"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rm8ov"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.36767727, 0.51741064, 1)
+proximity_fade_enabled = true
+distance_fade_mode = 1
+distance_fade_min_distance = 64.0
+distance_fade_max_distance = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l3kh5"]
+material = SubResource("StandardMaterial3D_rm8ov")
+size = Vector2(102, 70)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gpask"]
+size = Vector3(32, 23, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1gwn0"]
+size = Vector3(32, 23, 1)
+
+[node name="ForgottenCity" unique_id=477418701 instance=ExtResource("1_cs7g7")]
+script = ExtResource("2_vlr12")
+ring_groups = Array[ExtResource("3_k5hi0")]([SubResource("Resource_gpask")])
+environment = ExtResource("2_idb7s")
+level_state = Dictionary[StringName, Variant]({
+&"ring_group_completed": false
+})
+
+[node name="AudioStreamPlayerMusic" parent="." index="0" unique_id=2045508872]
+stream = ExtResource("3_vlr12")
+
+[node name="Fog" type="MeshInstance3D" parent="." index="3" unique_id=756585669]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12, -30)
+mesh = SubResource("PlaneMesh_l3kh5")
+
+[node name="VictoryArea3D" type="Area3D" parent="." index="4" unique_id=1467454248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1324)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VictoryArea3D" index="0" unique_id=1851632631]
+shape = SubResource("BoxShape3D_gpask")
+
+[node name="MusicFadeOutArea3D" type="Area3D" parent="." index="5" unique_id=1085432648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1304)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicFadeOutArea3D" index="0" unique_id=1696850369]
+shape = SubResource("BoxShape3D_1gwn0")
+
+[connection signal="body_entered" from="VictoryArea3D" to="." method="_on_victory_area_3d_body_entered"]
+[connection signal="body_entered" from="MusicFadeOutArea3D" to="." method="_on_music_fade_out_area_3d_body_entered"]
