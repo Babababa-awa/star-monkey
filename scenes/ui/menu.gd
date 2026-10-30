@@ -17,12 +17,9 @@ var state: MenuState = MenuState.NONE
 var selected_text_material: StandardMaterial3D = null
 var selected_text_mesh: MeshInstance3D = null
 
-var continue_yes: bool = false
 var current_continue_countdown: float = 0.0
 
-var _initial_coin_token: int = 0
-var _continue_coin_token: int = 0
-var _continue_done: bool = false
+var cabinet: ArcadeCabinet = null
 
 var skip_scene_yes: bool = false
 
@@ -45,6 +42,7 @@ signal skip_scene(skip: bool)
 func _ready() -> void:
 	change_state(MenuState.LOADING)
 	selected_text_material = load(StarMonkey.get_real_path("/materials/text/selectable_text_material.tres")).duplicate()
+	cabinet = ArcadeCabinet.get_cabinet(self)
 
 func start() -> void:
 	StarMonkey.get_instance().level_loaded.connect(_on_level_loaded)
@@ -93,13 +91,6 @@ func change_state(state_: MenuState) -> void:
 		MenuState.VICTORY:
 			%Victory.visible = true
 
-	if state == MenuState.INSERT_COIN:
-		_initial_coin_token += 1
-		_wait_for_initial_coin(_initial_coin_token)
-	elif state == MenuState.CONTINUE:
-		_continue_coin_token += 1
-		_wait_for_continue_coin(_continue_coin_token)
-
 func reset_state(state_: MenuState) -> void:
 	match state_:
 		MenuState.INSERT_COIN:
@@ -126,8 +117,6 @@ func reset_state(state_: MenuState) -> void:
 			hide_game_title()
 			hide_logo()
 			hide_yes_no()
-
-			_continue_done = false
 
 			if selected_text_mesh != null:
 				unselect_text(selected_text_mesh)
@@ -220,7 +209,11 @@ func _process(delta: float) -> void:
 	
 	match state:
 		MenuState.INSERT_COIN:
-			pass
+			if cabinet != null and cabinet.coins > 0:
+				cabinet.pop_coin()
+				change_state(MenuState.LOCALE_SELECT)
+				%AudioStreamPlayerSelect.pitch_scale = randf_range(0.9, 1.1)
+				%AudioStreamPlayerSelect.play()
 		MenuState.LOCALE_SELECT:
 			#if StarMonkey.is_action_just_pressed(&"back"):
 				#change_state(MenuState.INSERT_COIN)
@@ -251,6 +244,14 @@ func _process(delta: float) -> void:
 		MenuState.CHARACTER_SELECT:
 			pass
 		MenuState.CONTINUE:
+			if cabinet != null and cabinet.coins > 0:
+				cabinet.pop_coin()
+				change_state(MenuState.LOADING)
+				%AudioStreamPlayerSelect.pitch_scale = randf_range(0.9, 1.1)
+				%AudioStreamPlayerSelect.play()
+				StarMonkey.load_level(StarMonkey.current_level)
+				return
+
 			current_continue_countdown -= delta
 
 			if %Countdown.set_value(roundi(current_continue_countdown)):
@@ -258,10 +259,6 @@ func _process(delta: float) -> void:
 				%AudioStreamPlayerCountdown.play()
 
 			if current_continue_countdown <= -0.5:
-				if _continue_done:
-					return
-				_continue_done = true
-				_continue_coin_token += 1
 				change_state(MenuState.LOADING)
 				%AudioStreamPlayerCountdownEnd.pitch_scale = randf_range(0.9, 1.1)
 				%AudioStreamPlayerCountdownEnd.play()
@@ -303,34 +300,6 @@ func _process(delta: float) -> void:
 				%AudioStreamPlayerSelect.pitch_scale = randf_range(0.9, 1.1)
 				%AudioStreamPlayerSelect.play()
 				StarMonkey.load_level(StarMonkey.menu_level)
-
-func _wait_for_initial_coin(token: int) -> void:
-	var cab = ArcadeCabinet.get_cabinet(self)
-	if cab:
-		await cab.pop_coin()
-	if token != _initial_coin_token:
-		return
-	if state != MenuState.INSERT_COIN:
-		return
-	change_state(MenuState.LOCALE_SELECT)
-	%AudioStreamPlayerSelect.pitch_scale = randf_range(0.9, 1.1)
-	%AudioStreamPlayerSelect.play()
-
-func _wait_for_continue_coin(token: int) -> void:
-	var cab = ArcadeCabinet.get_cabinet(self)
-	if cab:
-		await cab.pop_coin()
-	if token != _continue_coin_token:
-		return
-	if state != MenuState.CONTINUE:
-		return
-	if _continue_done:
-		return
-	_continue_done = true
-	change_state(MenuState.LOADING)
-	%AudioStreamPlayerSelect.pitch_scale = randf_range(0.9, 1.1)
-	%AudioStreamPlayerSelect.play()
-	StarMonkey.load_level(StarMonkey.current_level)
 
 func _physics_process(delta: float) -> void:
 	match state:
