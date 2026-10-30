@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://1culmro3i2ig"
-path="res://.godot/imported/coutdown.wav-bf227f42ebaf2fe8cf1bbc5953ac5d86.sample"
+path="res://.godot/imported/coutdown.wav-ce66370c5f74233e7b5216740607bc4f.sample"
 
 [deps]
 
-source_file="res://assets/audio/sfx/coutdown.wav"
-dest_files=["res://.godot/imported/coutdown.wav-bf227f42ebaf2fe8cf1bbc5953ac5d86.sample"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/sfx/coutdown.wav"
+dest_files=["res://.godot/imported/coutdown.wav-ce66370c5f74233e7b5216740607bc4f.sample"]
 
 [params]
 

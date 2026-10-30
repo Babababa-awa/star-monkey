@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://vwdv7x7cocxf"
-path="res://.godot/imported/victory.mp3-b449d3988cff1aefcc21b655faa89f9a.mp3str"
+path="res://.godot/imported/victory.mp3-452d5da490f5b9955865a2a15e3a62a3.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/muisc/victory.mp3"
-dest_files=["res://.godot/imported/victory.mp3-b449d3988cff1aefcc21b655faa89f9a.mp3str"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/muisc/victory.mp3"
+dest_files=["res://.godot/imported/victory.mp3-452d5da490f5b9955865a2a15e3a62a3.mp3str"]
 
 [params]
 

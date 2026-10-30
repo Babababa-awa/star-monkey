@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dioabn2ddahwy"
-path="res://.godot/imported/frame_ai_enemy_destroyed_jp.mp3-acc812874b4eb4d358b96a73da92e652.mp3str"
+path="res://.godot/imported/frame_ai_enemy_destroyed_jp.mp3-8211fa6a3b6ffc9831224b60b4b7ca12.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/dialogue/frame_ai_enemy_destroyed_jp.mp3"
-dest_files=["res://.godot/imported/frame_ai_enemy_destroyed_jp.mp3-acc812874b4eb4d358b96a73da92e652.mp3str"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/dialogue/frame_ai_enemy_destroyed_jp.mp3"
+dest_files=["res://.godot/imported/frame_ai_enemy_destroyed_jp.mp3-8211fa6a3b6ffc9831224b60b4b7ca12.mp3str"]
 
 [params]
 

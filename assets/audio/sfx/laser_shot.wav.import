@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bu00jgfasxdnd"
-path="res://.godot/imported/laser_shot.wav-29580edcf0900ede03ac43f129d4162e.sample"
+path="res://.godot/imported/laser_shot.wav-ddb7d28ac878567efea3e395fa7d8158.sample"
 
 [deps]
 
-source_file="res://assets/audio/sfx/laser_shot.wav"
-dest_files=["res://.godot/imported/laser_shot.wav-29580edcf0900ede03ac43f129d4162e.sample"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/sfx/laser_shot.wav"
+dest_files=["res://.godot/imported/laser_shot.wav-ddb7d28ac878567efea3e395fa7d8158.sample"]
 
 [params]
 

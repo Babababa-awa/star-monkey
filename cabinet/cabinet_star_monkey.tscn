@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bbx5b0lycuqwh"]
+
+[ext_resource type="PackedScene" uid="uid://85wyfucors5h" path="res://Cabinets/presets/cabinet_rushn_attack.tscn" id="1_s2vwk"]
+[ext_resource type="PackedScene" uid="uid://dojby5sob6543" path="res://Arcade Games/Star Monkey/scenes/game.tscn" id="2_bc0as"]
+[ext_resource type="Material" uid="uid://cskebdsv1s627" path="res://Arcade Games/Star Monkey/cabinet/Arcade_machine.tres" id="2_gjepm"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gjepm"]
+viewport_path = NodePath("Tooltip/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_spxex"]
+viewport_path = NodePath("Tooltip/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fgb2m"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Cabinet" unique_id=1752319625 instance=ExtResource("1_s2vwk")]
+custom_material = ExtResource("2_gjepm")
+game_scene = ExtResource("2_bc0as")
+
+[node name="Screen" parent="ScreenContainer" parent_id_path=PackedInt32Array(2132404432) index="0" unique_id=769819713]
+resolution = Vector2(640, 480)
+
+[node name="Tooltip" parent="ScreenContainer/ScreenInteractZone" parent_id_path=PackedInt32Array(1828705782) index="1" unique_id=1310991000]
+texture = SubResource("ViewportTexture_gjepm")
+
+[node name="Shadow" parent="ScreenContainer/ScreenInteractZone/Tooltip" index="1" unique_id=1306854022]
+texture = SubResource("ViewportTexture_spxex")
+
+[node name="FireButton" parent="ControlPlane" parent_id_path=PackedInt32Array(872288392) index="0" unique_id=1609050805]
+surface_material_override/0 = ExtResource("2_gjepm")
+
+[node name="BombButton" parent="ControlPlane" parent_id_path=PackedInt32Array(872288392) index="1" unique_id=1920776179]
+surface_material_override/0 = ExtResource("2_gjepm")
+
+[node name="Joystick" parent="ControlPlane" parent_id_path=PackedInt32Array(872288392) index="2" unique_id=1619350208]
+surface_material_override/0 = ExtResource("2_gjepm")
+
+[node name="TextureRect" parent="Downsample" parent_id_path=PackedInt32Array(2094865604) index="0" unique_id=1900591909]
+texture = SubResource("ViewportTexture_fgb2m")
+
+[node name="RushnAttack" parent="." index="5" unique_id=1735056569]
+surface_material_override/0 = ExtResource("2_gjepm")
+
+[editable path="ScreenContainer/ScreenInteractZone"]

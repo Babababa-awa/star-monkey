@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dibfjg0552pbd"
-path="res://.godot/imported/turn_on.wav-2d16b20f1997d53dba3f59bc4ea7b29a.sample"
+path="res://.godot/imported/turn_on.wav-8cbaa3bc45d2a14a2684684bb05b0eaf.sample"
 
 [deps]
 
-source_file="res://assets/audio/sfx/turn_on.wav"
-dest_files=["res://.godot/imported/turn_on.wav-2d16b20f1997d53dba3f59bc4ea7b29a.sample"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/sfx/turn_on.wav"
+dest_files=["res://.godot/imported/turn_on.wav-8cbaa3bc45d2a14a2684684bb05b0eaf.sample"]
 
 [params]
 

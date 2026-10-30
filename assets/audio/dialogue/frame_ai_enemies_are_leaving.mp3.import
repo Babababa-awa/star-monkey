@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ef3xr3wauswa"
-path="res://.godot/imported/frame_ai_enemies_are_leaving.mp3-c58074b8f248b6587ec5dc11de385e39.mp3str"
+path="res://.godot/imported/frame_ai_enemies_are_leaving.mp3-d7c078099a1ab341695f2bff89d3b147.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/dialogue/frame_ai_enemies_are_leaving.mp3"
-dest_files=["res://.godot/imported/frame_ai_enemies_are_leaving.mp3-c58074b8f248b6587ec5dc11de385e39.mp3str"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/dialogue/frame_ai_enemies_are_leaving.mp3"
+dest_files=["res://.godot/imported/frame_ai_enemies_are_leaving.mp3-d7c078099a1ab341695f2bff89d3b147.mp3str"]
 
 [params]
 

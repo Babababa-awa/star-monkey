@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bjnjqmp6xdefm"
-path="res://.godot/imported/forgotten_city.mp3-8a65cacdb828467c6f9110c1f9e572b1.mp3str"
+path="res://.godot/imported/forgotten_city.mp3-e24aab1b352c5f90ed07d0d454f6096a.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/muisc/forgotten_city.mp3"
-dest_files=["res://.godot/imported/forgotten_city.mp3-8a65cacdb828467c6f9110c1f9e572b1.mp3str"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/muisc/forgotten_city.mp3"
+dest_files=["res://.godot/imported/forgotten_city.mp3-e24aab1b352c5f90ed07d0d454f6096a.mp3str"]
 
 [params]
 

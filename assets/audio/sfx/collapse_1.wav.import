@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dqdjv0dfafrgg"
-path="res://.godot/imported/collapse_1.wav-f6f235a467a1f43d6b19b3310c0014a8.sample"
+path="res://.godot/imported/collapse_1.wav-c74c37f7829c27fe78a206a67acc0fe1.sample"
 
 [deps]
 
-source_file="res://assets/audio/sfx/collapse_1.wav"
-dest_files=["res://.godot/imported/collapse_1.wav-f6f235a467a1f43d6b19b3310c0014a8.sample"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/sfx/collapse_1.wav"
+dest_files=["res://.godot/imported/collapse_1.wav-c74c37f7829c27fe78a206a67acc0fe1.sample"]
 
 [params]
 

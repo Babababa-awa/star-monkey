@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://v3hj2w2rjqxo"
-path="res://.godot/imported/frame_ai_weapons_upgraded_jp.mp3-385b1b08d84f6aa2228d106a9f46c222.mp3str"
+path="res://.godot/imported/frame_ai_weapons_upgraded_jp.mp3-f9d536f0c4cb779bb7a1a3549dfb2e87.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/dialogue/frame_ai_weapons_upgraded_jp.mp3"
-dest_files=["res://.godot/imported/frame_ai_weapons_upgraded_jp.mp3-385b1b08d84f6aa2228d106a9f46c222.mp3str"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/dialogue/frame_ai_weapons_upgraded_jp.mp3"
+dest_files=["res://.godot/imported/frame_ai_weapons_upgraded_jp.mp3-f9d536f0c4cb779bb7a1a3549dfb2e87.mp3str"]
 
 [params]
 

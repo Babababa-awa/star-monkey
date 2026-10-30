@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dtyrce7p5ks6g"
-path="res://.godot/imported/ring_success.wav-b718659ba76c1656ec9a12c134186085.sample"
+path="res://.godot/imported/ring_success.wav-66954c65859bce59819da1b1163d2bd3.sample"
 
 [deps]
 
-source_file="res://assets/audio/sfx/ring_success.wav"
-dest_files=["res://.godot/imported/ring_success.wav-b718659ba76c1656ec9a12c134186085.sample"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/sfx/ring_success.wav"
+dest_files=["res://.godot/imported/ring_success.wav-66954c65859bce59819da1b1163d2bd3.sample"]
 
 [params]
 

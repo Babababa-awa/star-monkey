@@ -1,9 +1,6 @@
 extends Resource
 class_name StarMonkeyEnemySpawn
 
-# "/scenes/units/enemies/flying_shooter_sp.tscn
-const FLYING_SHOOTER_SP = preload("uid://b6cyugl80etmh")
-
 @export var alias: StringName
 @export var enemy: StarMonkey.Enemies
 @export var weapon: StarMonkey.Weapons
@@ -26,7 +23,9 @@ func spawn(parent: Node3D) -> void:
 
 	match enemy:
 		StarMonkey.Enemies.FLYING_SHOOTER_SP:
-			node = FLYING_SHOOTER_SP.instantiate()
+			# "/scenes/units/enemies/flying_shooter_sp.tscn
+			var scene = load("uid://b6cyugl80etmh") as PackedScene
+			node = scene.instantiate()
 			if "_on_enemy_kill_after" in parent:
 				node.kill_after.connect(parent._on_enemy_kill_after.bind(alias), CONNECT_ONE_SHOT)
 			

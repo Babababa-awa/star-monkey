@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://drq2t3vxbfwqi"
-path="res://.godot/imported/enemy_explosion_3.wav-911d5709324fca03fd25e9bdcf12c13a.sample"
+path="res://.godot/imported/enemy_explosion_3.wav-d3b9a2bf04972fc6674570706c5c7857.sample"
 
 [deps]
 
-source_file="res://assets/audio/sfx/enemy_explosion_3.wav"
-dest_files=["res://.godot/imported/enemy_explosion_3.wav-911d5709324fca03fd25e9bdcf12c13a.sample"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/sfx/enemy_explosion_3.wav"
+dest_files=["res://.godot/imported/enemy_explosion_3.wav-d3b9a2bf04972fc6674570706c5c7857.sample"]
 
 [params]
 

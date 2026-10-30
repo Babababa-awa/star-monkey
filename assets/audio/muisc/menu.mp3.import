@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d0ntakoeyk6ho"
-path="res://.godot/imported/menu.mp3-dc4a85c52495b9b9ef20a7e56d8c98a5.mp3str"
+path="res://.godot/imported/menu.mp3-bc4992226a061626577482fad46b0cbf.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/muisc/menu.mp3"
-dest_files=["res://.godot/imported/menu.mp3-dc4a85c52495b9b9ef20a7e56d8c98a5.mp3str"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/muisc/menu.mp3"
+dest_files=["res://.godot/imported/menu.mp3-bc4992226a061626577482fad46b0cbf.mp3str"]
 
 [params]
 

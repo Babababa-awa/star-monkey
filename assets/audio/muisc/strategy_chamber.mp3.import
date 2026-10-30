@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://8oevwat032gq"
-path="res://.godot/imported/strategy_chamber.mp3-73bd3c4e0122048da8cf254224f7569e.mp3str"
+path="res://.godot/imported/strategy_chamber.mp3-179ef42815d5817974e4fe5ffa17ad71.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/muisc/strategy_chamber.mp3"
-dest_files=["res://.godot/imported/strategy_chamber.mp3-73bd3c4e0122048da8cf254224f7569e.mp3str"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/muisc/strategy_chamber.mp3"
+dest_files=["res://.godot/imported/strategy_chamber.mp3-179ef42815d5817974e4fe5ffa17ad71.mp3str"]
 
 [params]
 

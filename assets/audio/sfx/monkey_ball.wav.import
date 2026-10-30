@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c3ndcs4qqsjcv"
-path="res://.godot/imported/monkey_ball.wav-578b18adb3e7deb7b55596244170c1ba.sample"
+path="res://.godot/imported/monkey_ball.wav-19ef96e0832c81321bd33219c10c1bd9.sample"
 
 [deps]
 
-source_file="res://assets/audio/sfx/monkey_ball.wav"
-dest_files=["res://.godot/imported/monkey_ball.wav-578b18adb3e7deb7b55596244170c1ba.sample"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/sfx/monkey_ball.wav"
+dest_files=["res://.godot/imported/monkey_ball.wav-19ef96e0832c81321bd33219c10c1bd9.sample"]
 
 [params]
 

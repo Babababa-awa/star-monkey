@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cml0xh3n2ahq7"
-path="res://.godot/imported/frame_ai_shields_down_jp.mp3-6e2622b360ca465e69ece26e0e6b9274.mp3str"
+path="res://.godot/imported/frame_ai_shields_down_jp.mp3-d99a39a1385176a18d028f31ad16de71.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/dialogue/frame_ai_shields_down_jp.mp3"
-dest_files=["res://.godot/imported/frame_ai_shields_down_jp.mp3-6e2622b360ca465e69ece26e0e6b9274.mp3str"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/dialogue/frame_ai_shields_down_jp.mp3"
+dest_files=["res://.godot/imported/frame_ai_shields_down_jp.mp3-d99a39a1385176a18d028f31ad16de71.mp3str"]
 
 [params]
 

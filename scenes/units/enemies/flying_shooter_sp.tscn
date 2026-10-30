@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b6cyugl80etmh"]
 
-[ext_resource type="PackedScene" uid="uid://cjx486iiyo12w" path="res://scenes/units/enemies/base_enemy.tscn" id="1_kmvjs"]
-[ext_resource type="Script" uid="uid://dc1342ufsaxh7" path="res://scenes/units/enemies/flying_shooter_sp.gd" id="2_vtmjt"]
-[ext_resource type="PackedScene" uid="uid://dg7wngvv3ewnl" path="res://models/units/enemies/glass_dome.tscn" id="4_00oea"]
-[ext_resource type="PackedScene" uid="uid://wuu75s814w6v" path="res://models/units/enemies/sweet_potato.tscn" id="4_gcmnr"]
-[ext_resource type="PackedScene" uid="uid://cdrlbsl81nq5s" path="res://models/units/enemies/bottom_dome.tscn" id="5_00oea"]
-[ext_resource type="PackedScene" uid="uid://d2cjsiytt6dvn" path="res://models/units/enemies/base.tscn" id="5_gcmnr"]
-[ext_resource type="PackedScene" uid="uid://usvgxporg5v4" path="res://models/weapons/pulse_cannon.tscn" id="8_2x2nh"]
-[ext_resource type="PackedScene" uid="uid://bub4pu58bl411" path="res://scenes/weapons/pulse_cannon.tscn" id="8_t8821"]
+[ext_resource type="PackedScene" uid="uid://cjx486iiyo12w" path="res://Arcade Games/Star Monkey/scenes/units/enemies/base_enemy.tscn" id="1_kmvjs"]
+[ext_resource type="Script" uid="uid://dc1342ufsaxh7" path="res://Arcade Games/Star Monkey/scenes/units/enemies/flying_shooter_sp.gd" id="2_vtmjt"]
+[ext_resource type="PackedScene" uid="uid://dg7wngvv3ewnl" path="res://Arcade Games/Star Monkey/models/units/enemies/glass_dome.tscn" id="4_00oea"]
+[ext_resource type="PackedScene" uid="uid://wuu75s814w6v" path="res://Arcade Games/Star Monkey/models/units/enemies/sweet_potato.tscn" id="4_gcmnr"]
+[ext_resource type="PackedScene" uid="uid://cdrlbsl81nq5s" path="res://Arcade Games/Star Monkey/models/units/enemies/bottom_dome.tscn" id="5_00oea"]
+[ext_resource type="PackedScene" uid="uid://d2cjsiytt6dvn" path="res://Arcade Games/Star Monkey/models/units/enemies/base.tscn" id="5_gcmnr"]
+[ext_resource type="PackedScene" uid="uid://usvgxporg5v4" path="res://Arcade Games/Star Monkey/models/weapons/pulse_cannon.tscn" id="8_2x2nh"]
+[ext_resource type="PackedScene" uid="uid://bub4pu58bl411" path="res://Arcade Games/Star Monkey/scenes/weapons/pulse_cannon.tscn" id="8_t8821"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gee14"]
 radius = 2.0

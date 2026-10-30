@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cjx486iiyo12w"]
 
-[ext_resource type="Script" uid="uid://ei552te4yo1r" path="res://scripts/base_enemy.gd" id="1_tsgou"]
-[ext_resource type="Script" uid="uid://bl35jhm8obkxt" path="res://scripts/damage_area_3d.gd" id="3_c0jxu"]
-[ext_resource type="Script" uid="uid://o4d4788nxyti" path="res://scripts/unit_mesh_collection.gd" id="3_pfseq"]
-[ext_resource type="Script" uid="uid://bn3f47lhct1xe" path="res://scripts/mesh_exploder.gd" id="3_rnbyi"]
-[ext_resource type="PackedScene" uid="uid://btviqfhew78a4" path="res://scenes/vfx/explosion.tscn" id="4_c0jxu"]
+[ext_resource type="Script" uid="uid://ei552te4yo1r" path="res://Arcade Games/Star Monkey/scripts/base_enemy.gd" id="1_tsgou"]
+[ext_resource type="Script" uid="uid://bl35jhm8obkxt" path="res://Arcade Games/Star Monkey/scripts/damage_area_3d.gd" id="3_c0jxu"]
+[ext_resource type="Script" uid="uid://o4d4788nxyti" path="res://Arcade Games/Star Monkey/scripts/unit_mesh_collection.gd" id="3_pfseq"]
+[ext_resource type="Script" uid="uid://bn3f47lhct1xe" path="res://Arcade Games/Star Monkey/scripts/mesh_exploder.gd" id="3_rnbyi"]
+[ext_resource type="PackedScene" uid="uid://btviqfhew78a4" path="res://Arcade Games/Star Monkey/scenes/vfx/explosion.tscn" id="4_c0jxu"]
 
 [node name="BaseEnemy" type="CharacterBody3D" unique_id=476004655]
 script = ExtResource("1_tsgou")

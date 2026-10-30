@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bqgl3g5d2oevw"
-path="res://.godot/imported/jelly_talk_2.wav-f05097a3ce68f426f019db33a6db4654.sample"
+path="res://.godot/imported/jelly_talk_2.wav-fa7bccf9455a2d44e8eb6e6ced3b9f32.sample"
 
 [deps]
 
-source_file="res://assets/audio/dialogue/jelly_talk_2.wav"
-dest_files=["res://.godot/imported/jelly_talk_2.wav-f05097a3ce68f426f019db33a6db4654.sample"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/dialogue/jelly_talk_2.wav"
+dest_files=["res://.godot/imported/jelly_talk_2.wav-fa7bccf9455a2d44e8eb6e6ced3b9f32.sample"]
 
 [params]
 

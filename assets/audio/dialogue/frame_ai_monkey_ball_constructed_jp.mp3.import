@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://mc4alqhbliom"
-path="res://.godot/imported/frame_ai_monkey_ball_constructed_jp.mp3-d8a9d1bd8ce8a4e84ce712dc8eccba95.mp3str"
+path="res://.godot/imported/frame_ai_monkey_ball_constructed_jp.mp3-eecac0604cd0a170924dc73c5084b188.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/dialogue/frame_ai_monkey_ball_constructed_jp.mp3"
-dest_files=["res://.godot/imported/frame_ai_monkey_ball_constructed_jp.mp3-d8a9d1bd8ce8a4e84ce712dc8eccba95.mp3str"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/dialogue/frame_ai_monkey_ball_constructed_jp.mp3"
+dest_files=["res://.godot/imported/frame_ai_monkey_ball_constructed_jp.mp3-eecac0604cd0a170924dc73c5084b188.mp3str"]
 
 [params]
 

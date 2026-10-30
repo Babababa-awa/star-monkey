@@ -42,6 +42,10 @@ func _ready() -> void:
 	change_state(MenuState.LOADING)
 	selected_text_material = load(StarMonkey.get_real_path("/materials/text/selectable_text_material.tres")).duplicate()
 
+	var cab = ArcadeCabinet.get_cabinet(self)
+	if cab:
+		cab.coin_inserted.connect(_on_insert_coin)
+
 func start() -> void:
 	StarMonkey.get_instance().level_loaded.connect(_on_level_loaded)
 	
@@ -209,16 +213,13 @@ func _process(delta: float) -> void:
 	
 	match state:
 		MenuState.INSERT_COIN:
-			if StarMonkey.is_action_just_pressed(&"forward"):
-				change_state(MenuState.LOCALE_SELECT)
-				%AudioStreamPlayerSelect.pitch_scale = randf_range(0.9, 1.1)
-				%AudioStreamPlayerSelect.play()
+			pass
 		MenuState.LOCALE_SELECT:
-			if StarMonkey.is_action_just_pressed(&"back"):
-				change_state(MenuState.INSERT_COIN)
-				%AudioStreamPlayerSelect.pitch_scale = randf_range(0.9, 1.1)
-				%AudioStreamPlayerSelect.play()
-			elif (StarMonkey.is_action_just_pressed(&"move_up") or
+			#if StarMonkey.is_action_just_pressed(&"back"):
+				#change_state(MenuState.INSERT_COIN)
+				#%AudioStreamPlayerSelect.pitch_scale = randf_range(0.9, 1.1)
+				#%AudioStreamPlayerSelect.play()
+			if (StarMonkey.is_action_just_pressed(&"move_up") or
 				StarMonkey.is_action_just_pressed(&"move_down")
 			):
 				if StarMonkey.locale == StarMonkey.Locales.EN:
@@ -321,7 +322,12 @@ func _process(delta: float) -> void:
 				%AudioStreamPlayerSelect.pitch_scale = randf_range(0.9, 1.1)
 				%AudioStreamPlayerSelect.play()
 				StarMonkey.load_level(StarMonkey.menu_level)
-				
+
+func _on_insert_coin() -> void:
+	change_state(MenuState.LOCALE_SELECT)
+	%AudioStreamPlayerSelect.pitch_scale = randf_range(0.9, 1.1)
+	%AudioStreamPlayerSelect.play()
+
 func _physics_process(delta: float) -> void:
 	match state:
 		MenuState.INSERT_COIN:

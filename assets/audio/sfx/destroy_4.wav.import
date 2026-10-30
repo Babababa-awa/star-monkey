@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cra1ceqqirx62"
-path="res://.godot/imported/destroy_4.wav-cf0da97b1e2b91d41ea35fbcb2f67a69.sample"
+path="res://.godot/imported/destroy_4.wav-e1eb9bd1fbc0cb74a4f3467d1bf4a7db.sample"
 
 [deps]
 
-source_file="res://assets/audio/sfx/destroy_4.wav"
-dest_files=["res://.godot/imported/destroy_4.wav-cf0da97b1e2b91d41ea35fbcb2f67a69.sample"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/sfx/destroy_4.wav"
+dest_files=["res://.godot/imported/destroy_4.wav-e1eb9bd1fbc0cb74a4f3467d1bf4a7db.sample"]
 
 [params]
 

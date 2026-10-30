@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1skf2tcfgu0k"
-path.s3tc="res://.godot/imported/jelly_face_left_eye.png-57c49e2daa7685cd0d56f8259b772f92.s3tc.ctex"
+path.s3tc="res://.godot/imported/jelly_face_left_eye.png-e975c10f60b37601958ea3d502cff60c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/characters/jelly_face_left_eye.png"
-dest_files=["res://.godot/imported/jelly_face_left_eye.png-57c49e2daa7685cd0d56f8259b772f92.s3tc.ctex"]
+source_file="res://Arcade Games/Star Monkey/assets/characters/jelly_face_left_eye.png"
+dest_files=["res://.godot/imported/jelly_face_left_eye.png-e975c10f60b37601958ea3d502cff60c.s3tc.ctex"]
 
 [params]
 

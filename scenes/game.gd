@@ -1,7 +1,7 @@
 extends Node
 class_name StarMonkey
 
-const ARCADE_MODE: bool = false
+const ARCADE_MODE: bool = true
 
 static var _self: StarMonkey = null
 static var gravity = 9.8
@@ -16,6 +16,8 @@ static var bounds: StarMonkeyBounds
 static var character: Characters = Characters.NONE
 static var locale: Locales = Locales.EN
 static var sfx: StarMonkeyGameSFX = null
+
+static var input: StarMonkeyInputHandler = null
 
 static var score: int = 0:
 	set = _set_score
@@ -87,15 +89,21 @@ signal level_error(level: StringName)
 
 func _ready() -> void:
 	_self = self
+	
+	input = StarMonkeyInputHandler.new()
+	
 	camera = %Camera3D
 	menu = %Menu
 	hud = %Hud
 	speech = %Speech
 	bounds = %Bounds
 	sfx = %GameSFX
+		
 	menu.start()
-	
+
 func _process(delta: float) -> void:
+	input.process()
+	
 	if StarMonkey.is_action_just_pressed(&"pause"):
 		if StarMonkey.menu.state == StarMonkey.menu.MenuState.PAUSE:
 			StarMonkey.menu.change_state(StarMonkey.menu.MenuState.NONE)
@@ -106,11 +114,17 @@ func _process(delta: float) -> void:
 
 static func pause() -> void:
 	_self.get_node("%Overlay").visible = false
-	_self.get_tree().paused = true
+	_self.get_node("%World").process_mode = Node.PROCESS_MODE_DISABLED
+	_self.get_node("%Speech").process_mode = Node.PROCESS_MODE_DISABLED
+	_self.get_node("%Hud").process_mode = Node.PROCESS_MODE_DISABLED
+	#_self.get_tree().paused = true
 
 static func unpause() -> void:
 	_self.get_node("%Overlay").visible = true
-	_self.get_tree().paused = false
+	_self.get_node("%World").process_mode = Node.PROCESS_MODE_PAUSABLE
+	_self.get_node("%Speech").process_mode = Node.PROCESS_MODE_PAUSABLE
+	_self.get_node("%Hud").process_mode = Node.PROCESS_MODE_PAUSABLE
+	#_self.get_tree().paused = false
 
 static func load_next_level() -> void:
 	load_level(get_next_level())
@@ -256,35 +270,33 @@ static func _set_score(value: int) -> void:
 	score = value
 	hud.set_score(score)
 
+func _input(event: InputEvent) -> void:
+	input.update_input(event)
+
 static func get_axis_x() -> float:
 	if disable_input:
 		return 0.0
-		
-	return Input.get_axis("move_left", "move_right")
+	
+	return input.get_axis_x()
 	
 static func get_axis_y() -> float:
 	if disable_input:
 		return 0.0
-		
-	return Input.get_axis("move_down", "move_up")
+	
+	return input.get_axis_y()
 
 static func is_action_just_pressed(action_: StringName) -> bool:
 	if disable_input:
 		return false
 	
-	if ARCADE_MODE:
-		if action_ == &"forward":
-			return Input.is_action_just_pressed(&"shoot")
-		elif action_ == &"back":
-			return Input.is_action_just_pressed(&"special")
-		
-	return Input.is_action_just_pressed(action_)
+	return input.is_action_just_pressed(action_)
+	
 	
 static func is_action_pressed(action_: StringName) -> bool:
 	if disable_input:
 		return false
-		
-	return Input.is_action_pressed(action_)
+	
+	return input.is_action_pressed(action_)
 
 static func get_real_path(path_: StringName) -> StringName:
-	return "res:/" + path_
+	return "res://Arcade Games/Star Monkey" + path_

@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cskebdsv1s627"]
+
+[ext_resource type="Texture2D" uid="uid://1xugohuboxwh" path="res://Arcade Games/Star Monkey/cabinet/cabinet.png" id="1_xujg0"]
+[ext_resource type="Texture2D" uid="uid://b44xcvbq63ybl" path="res://Cabinets/textures/occlusion.png" id="2_uywcf"]
+[ext_resource type="Texture2D" uid="uid://c31b68pg71sn0" path="res://Cabinets/textures/metalness.png" id="3_f01ns"]
+[ext_resource type="Texture2D" uid="uid://cslqlgobltssn" path="res://Cabinets/textures/roughness.png" id="4_2hni7"]
+
+[resource]
+resource_name = "Arcade_machine"
+albedo_texture = ExtResource("1_xujg0")
+metallic = 1.0
+metallic_texture = ExtResource("3_f01ns")
+roughness_texture = ExtResource("4_2hni7")
+normal_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_uywcf")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+metadata/_arcade_cabinet_body = true

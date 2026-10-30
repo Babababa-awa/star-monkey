@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://musbw4v6emq8"
-path="res://.godot/imported/jelly_confirm.wav-1a1047bc611b445087e67cb7737e139b.sample"
+path="res://.godot/imported/jelly_confirm.wav-40517ce5f88134e2a3d196227985e72b.sample"
 
 [deps]
 
-source_file="res://assets/audio/dialogue/jelly_confirm.wav"
-dest_files=["res://.godot/imported/jelly_confirm.wav-1a1047bc611b445087e67cb7737e139b.sample"]
+source_file="res://Arcade Games/Star Monkey/assets/audio/dialogue/jelly_confirm.wav"
+dest_files=["res://.godot/imported/jelly_confirm.wav-40517ce5f88134e2a3d196227985e72b.sample"]
 
 [params]
 
