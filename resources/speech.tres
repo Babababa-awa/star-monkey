@@ -1,12 +1,13 @@
 [gd_resource type="Theme" format=3 uid="uid://04m40rjti25y"]
 
-[ext_resource type="FontFile" uid="uid://dnsmw8ln47762" path="res://assets/fonts/WDXLLubrifontJPN-Regular.ttf" id="1_8noc3"]
+[ext_resource type="FontFile" uid="uid://dnsmw8ln47762" path="res://Arcade Games/Star Monkey/assets/fonts/WDXLLubrifontJPN-Regular.ttf" id="1_8noc3"]
 
 [resource]
 default_font = ExtResource("1_8noc3")
+default_font_size = 15
 Label/colors/font_color = Color(0.90588236, 0.87058824, 0, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/line_spacing = 2
 Label/constants/outline_size = 12
 Label/font_sizes/font_size = 32
-MarginContainer/constants/margin_bottom = 16
+MarginContainer/constants/margin_bottom = 14

@@ -35,6 +35,9 @@ surface_material_override/0 = ExtResource("2_gjepm")
 [node name="Joystick" parent="ControlPlane" parent_id_path=PackedInt32Array(872288392) index="2" unique_id=1619350208]
 surface_material_override/0 = ExtResource("2_gjepm")
 
+[node name="Lightgun" parent="ControlPlane" parent_id_path=PackedInt32Array(872288392) index="3" unique_id=152386206]
+visible = false
+
 [node name="TextureRect" parent="Downsample" parent_id_path=PackedInt32Array(2094865604) index="0" unique_id=1900591909]
 texture = SubResource("ViewportTexture_fgb2m")
 
